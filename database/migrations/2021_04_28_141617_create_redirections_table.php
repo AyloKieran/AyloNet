@@ -15,10 +15,12 @@ class CreateRedirectionsTable extends Migration
     {
         Schema::create('redirections', function (Blueprint $table) {
             $table->id();
-            // $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
             $table->string('route');
             $table->longText('url');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
