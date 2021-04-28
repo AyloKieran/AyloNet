@@ -16,6 +16,9 @@ module.exports = {
             colors: {
                 truegray: colors.trueGray,
             },
+            width: {
+                '100': '100%',
+            },
         },
     },
 

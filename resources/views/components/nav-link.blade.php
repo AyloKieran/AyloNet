@@ -7,7 +7,7 @@ $classes = ($active ?? false)
 @endphp
 
 <div {{ $attributes->merge(['class' => $classes]) }}>
-    <a {{ $attributes->merge(['href' => $href]) }}>
+    <a class="w-full inline-block" {{ $attributes->merge(['href' => $href]) }}>
         {{ $slot }}
     </a>
 </div>
