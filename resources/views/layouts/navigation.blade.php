@@ -1,7 +1,9 @@
 <nav x-data="{ open: false }" class="w-full flex flex-col bg-truegray-700 md:hidden">
     <div class="flex items-center md:hidden p-1">
         <div class="pl-2">
-            <a href="{{ route('home') }}"><img class="h-7" src="{{ asset('aylo.svg') }}"></img></a>
+            <a href="{{ route('home') }}">
+                <x-logo class="h-8"></x-logo>
+            </a>
         </div>
         <div class="flex-grow"></div>
         <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
@@ -68,7 +70,9 @@
 
 <nav class="w-72 flex-grow min-h-screen bg-truegray-700 hidden md:flex md:flex-col shadow-xl">
     <div class="bg-truegray-800 shadow-xl py-3">
-        <a href="{{ route('home') }}"><img class="w-1/3 mx-auto" src="{{ asset('aylo.svg') }}"></img></a>
+        <a href="{{ route('home') }}">
+            <x-logo class="w-3/5 mx-auto"></x-logo>
+        </a>
     </div>
 
     <div class="flex-grow py-3">
