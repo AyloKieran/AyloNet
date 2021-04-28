@@ -16,8 +16,6 @@ class PageController extends Controller
             $redirectionStatistic->usage = $redirectionStatistic->usage + 1;
             $redirectionStatistic->save();
 
-            dd($redirect->statistics);
-
             return redirect($redirect->url);
         }
         abort(404);
