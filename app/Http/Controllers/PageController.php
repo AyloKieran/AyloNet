@@ -18,6 +18,13 @@ class PageController extends Controller
 
             return redirect($redirect->url);
         }
+
+        $page = base_path() . "/resources/views/pages/{$path}.blade.php";
+        if(file_exists($page)){
+            // dd($page);
+            return view('pages/'. $path);
+        }
+
         abort(404);
     }
 }
