@@ -69,7 +69,7 @@
 </nav>
 
 <nav class="w-72 flex-grow min-h-screen bg-gray-800 hidden md:flex md:flex-col shadow-xl">
-    <div class="bg-truegray-900 shadow-xl py-3">
+    <div class="bg-gray-900 shadow-xl py-3">
         <a href="{{ route('home') }}">
             <x-logo class="px-auto h-12 w-100"></x-logo>
         </a>
