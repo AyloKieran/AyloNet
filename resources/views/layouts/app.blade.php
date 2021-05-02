@@ -18,14 +18,15 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+
     </head>
     <body class="flex flex-col md:flex-row font-sans antialiased text-white min-h-screen">
         <div>
             @include('layouts.navigation')
         </div>
-        <div class="bg-truegray-600 flex-grow">
+        <div class="bg-truegray-100 flex-grow">
             <!-- Page Content -->
-            <main class="flex-grow">
+            <main class="flex-grow text-black">
                 {{ $slot }}
             </main>
         </div>
