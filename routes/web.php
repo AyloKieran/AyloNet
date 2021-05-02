@@ -22,3 +22,9 @@ require __DIR__.'/auth.php';
 require __DIR__.'/admin/admin.php';
 
 Route::get("{path}", "App\Http\Controllers\PageController@serve")->where('path', '.+');
+
+
+if(env('FORCE_HTTPS'))
+{
+    URL::forceScheme('https');
+}
