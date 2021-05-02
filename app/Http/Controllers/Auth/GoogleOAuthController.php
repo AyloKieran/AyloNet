@@ -27,12 +27,13 @@ class GoogleOAuthController extends Controller
 
     public function _registerOrLoginUser($data)
     {
-        $user = User::where('email', $data->email)->first();
+        $user = User::where([['email', $data->email], ['provider', "google"]])->first();
         if(!$user) {
             $user = new User();
 
             $user->name = $data->name;
             $user->email = $data->email;
+            $user->provider = "google";
             $user->provider_id = $data->id;
             $user->email_verified_at = Carbon::now();
         }
