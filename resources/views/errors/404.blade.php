@@ -1,16 +1,22 @@
 <x-app-layout>
     <x-slot name="title">
-        {{ __('Page Not Found') }}
+        {{ __('404') }}
     </x-slot>
 
-    <div class="py-4">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class=" overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 bg-truegray-500 border-b border-truegray-600">
-            <h1 class="text-4xl font-bold">404</h1>
-                    Oh no! We couldn't find what you're looking for 😥
-                </div>
+    <div class="w-full h-screen bg-gray-100 flex flex-col">
+        <div class="flex-grow"></div>
+        <div class="flex flex-col items-center">
+            <h1 class="text-3xl text-gray-700">Whoops!</h1>
+            <p class="text-lg text-gray-600">That page can't be found 😥</p>
+            <section class="text-9xl pt-20 pb-16 font-extrabold text-gray-900">
+                <span>4</span>
+                <span class="px-3">0</span>
+                <span>4</span>
+            </section>
+            <div class="text-gray-900">
+                <a href="{{ route('home') }}" class="bg-gray-300 p-2 rounded-md shadow-md hover:bg-gray-400 transition opacity-75 hover:opacity-90">Home</a>
             </div>
         </div>
+        <div class="flex-grow"></div>
     </div>
 </x-app-layout>
