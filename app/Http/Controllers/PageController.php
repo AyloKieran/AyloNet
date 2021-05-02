@@ -12,7 +12,7 @@ class PageController extends Controller
     {
         $redirect = Redirections::where('route', $path)->first();
         if($redirect) {
-            $redirectionStatistic = RedirectionStatistics::firstOrNew(['id' => $redirect->id]);
+            $redirectionStatistic = RedirectionStatistics::find(['id' => $redirect->id])->first();
             $redirectionStatistic->usage = $redirectionStatistic->usage + 1;
             $redirectionStatistic->save();
 

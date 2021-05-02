@@ -105,11 +105,13 @@
                 <span class="text-md text-truegray-300">{{ Auth::user()->name }}</span>
             </div>
             <div class="flex-grow"></div>
+            @can('admin')
             <div class="h-auto flex flex-col justify-center items-center text-truegray-400 hover:text-white transition">
-                <a href="#">
+                <a href="{{ route('admin') }}">
                     <i class="fas fa-sliders-h"></i>
                 </a>
             </div>
+            @endcan
             <div class="h-auto flex flex-col justify-center items-center text-truegray-400 hover:text-white transition ml-4 mr-1">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf

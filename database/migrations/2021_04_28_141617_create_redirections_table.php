@@ -16,7 +16,7 @@ class CreateRedirectionsTable extends Migration
         Schema::create('redirections', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('route');
+            $table->string('route')->unique();
             $table->longText('url');
             $table->timestamps();
 
