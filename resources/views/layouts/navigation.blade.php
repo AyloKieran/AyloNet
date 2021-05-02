@@ -68,15 +68,15 @@
     </div>
 </nav>
 
-<nav class="w-72 flex-grow min-h-screen bg-truegray-700 hidden md:flex md:flex-col shadow-xl">
-    <div class="bg-truegray-800 shadow-xl py-3">
+<nav class="w-72 flex-grow min-h-screen bg-gray-800 hidden md:flex md:flex-col shadow-xl">
+    <div class="bg-truegray-900 shadow-xl py-3">
         <a href="{{ route('home') }}">
-            <x-logo class="w-3/5 mx-auto"></x-logo>
+            <x-logo class="px-auto h-12 w-100"></x-logo>
         </a>
     </div>
 
     <div class="flex-grow py-3">
-        <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+        <x-nav-link :href="route('home')" :icon="'fas fa-home'" :active="request()->routeIs('home')">
             Home
         </x-nav-link>
         <x-nav-link :href="'/portfolio'" :active="request()->path() == 'portfolio'">
@@ -91,7 +91,7 @@
     </div>
 
     @auth
-        <div class="bg-truegray-800 shadow-xl flex flex-row p-2">
+        <div class="bg-gray-900 shadow-xl flex flex-row p-2">
 
             @if(!auth()->user()->avatar)
                 <svg class="h-8 w-8 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

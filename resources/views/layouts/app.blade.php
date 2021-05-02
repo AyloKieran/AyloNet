@@ -23,7 +23,7 @@
         <div>
             @include('layouts.navigation')
         </div>
-        <div class="bg-truegray-600 flex-grow">
+        <div class="bg-truegray-100 flex-grow">
             <!-- Page Content -->
             <main class="flex-grow">
                 {{ $slot }}
