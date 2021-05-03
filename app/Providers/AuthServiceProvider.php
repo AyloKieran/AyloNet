@@ -27,7 +27,13 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('admin', function (User $user) {
-            if ($user->user_role == 'admin')
+            if ($user->provider == 'google' || $user->provider == 'azure')
+            {
+                if (preg_match_all('/^A[0-9]{6}@aylo.net$/', $user->email) == 1) {
+                    return true;
+                }
+            }
+            elseif ($user->user_role == 'admin')
             {
                 return true;
             }
