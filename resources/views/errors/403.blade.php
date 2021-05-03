@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="title">
-        {{ __('404') }}
+        {{ __('403') }}
     </x-slot>
 
     <div class="w-full h-screen bg-gray-100 flex flex-col">

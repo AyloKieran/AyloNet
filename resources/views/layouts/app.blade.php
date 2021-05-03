@@ -30,7 +30,7 @@
         </div>
         <div class="bg-truegray-100 flex-grow">
             <!-- Page Content -->
-            <main class="flex-grow text-black">
+            <main class="flex-grow text-black md:pl-72">
                 {{ $slot }}
             </main>
         </div>
