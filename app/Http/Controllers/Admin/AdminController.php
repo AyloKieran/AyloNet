@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Redirections;
 use App\Models\RedirectionsStatistics;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -17,6 +18,7 @@ class AdminController extends Controller
     public function index()
     {
         $redirections = Redirections::with('statistics')->get()->sortByDesc('statistics.usage')->take(10);
-        return view('admin.index')->with('redirections', $redirections);
+        $users = User::orderBy('created_at', 'DESC')->get()->take(4);
+        return view('admin.index')->with('redirections', $redirections)->with('users', $users);
     }
 }
