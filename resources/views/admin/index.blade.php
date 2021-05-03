@@ -40,10 +40,10 @@
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                             </svg>
                                         @else
-                                            <img class="h-10 w-10 rounded-full" src="{{ $redirection->creator()->avatar }}" alt="{{ $redirection->creator()->first()->name }}"></img>
+                                            <img class="h-10 w-10 rounded-full" src="{{ $redirection->creator()->avatar }}" alt="{{ $redirection->creator()->first()->name }}'s Avatar" title="{{ $redirection->creator()->first()->name }}"></img>
                                         @endif
                                         </div>
-                                    <p class="my-auto">{{ $redirection->updated_at->diffForHumans(null, false, true) }}</p>
+                                    <p class="my-auto" title="{{ $redirection->updated_at }}">{{ $redirection->updated_at->diffForHumans(null, false, true) }}</p>
                                 </td>
                                 <td class="text-center">{{ $redirection->statistics()->first()->usage }}</td>
                             </tr>

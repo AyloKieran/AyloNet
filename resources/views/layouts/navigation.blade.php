@@ -93,6 +93,7 @@
 
     <div class="bg-gray-900 flex flex-row p-2">
         @auth
+            <a href="{{ route('user') }}" class="flex flex-row">
             <div class="w-10">
             @if(!auth()->user()->avatar)
                 <svg class="h-10 w-10 p-1 fill-current text-gray-400 rounded-full bg-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -104,12 +105,13 @@
             </div>
 
             <div class="mx-2 my-auto h-6 flex flex-col justify-center items-center">
-                <span class="text-md text-truegray-300 overflow-hidden">{{ Auth::user()->name }}</span>
+                <span class="text-md text-truegray-300 overflow-hidden hover:text-white transition" title="{{ Auth::user()->email }} ({{ Auth::user()->provider }})">{{ Auth::user()->name }}</span>
             </div>
+            </a>
             <div class="flex-grow"></div>
             @can('admin')
             <div class="h-auto flex flex-col justify-center items-center text-truegray-400 hover:text-white transition">
-                <a href="{{ route('admin') }}">
+                <a href="{{ route('admin') }}" title="Admin Panel">
                     <i class="fas fa-sliders-h"></i>
                 </a>
             </div>
@@ -117,7 +119,7 @@
             <div class="h-auto flex flex-col justify-center items-center text-truegray-400 hover:text-white transition ml-4 mr-1">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button>
+                    <button title="Log out">
                     <i class="fas fa-sign-out-alt"></i>
                     </button>
                 </form>

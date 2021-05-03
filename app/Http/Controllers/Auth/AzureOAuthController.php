@@ -37,10 +37,6 @@ class AzureOAuthController extends Controller
             $user->provider_id = $data->id;
             $user->email_verified_at = Carbon::now();
         }
-
-        if($data->avatar) {
-            $user->avatar = $data->avatar;
-        }
         
         $user->save();
 

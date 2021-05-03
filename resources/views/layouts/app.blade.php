@@ -16,6 +16,10 @@
 
         <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
+        <style>
+            {{ $styles ?? '' }}
+        </style>
+
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
 
