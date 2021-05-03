@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\GoogleOAuthController;
 use App\Http\Controllers\Auth\AzureOAuthController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
@@ -68,3 +69,7 @@ Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
+
+Route::delete('/user/delete', [UserController::class, 'destroy'])
+                ->middleware('auth')
+                ->name('deleteUser');

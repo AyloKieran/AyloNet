@@ -15,4 +15,10 @@ class UserController extends Controller
     {
         return view('user.index');
     }
+
+    function destroy()
+    {
+        auth()->user()->delete();
+        return redirect(route('home'));
+    }
 }

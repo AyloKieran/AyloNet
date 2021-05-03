@@ -26,7 +26,7 @@
 
         <div class="pt-4 pb-1 border-t border-gray-200">
         @auth
-            <div class="flex items-center px-4">
+            <a href="{{ route('user') }}" class="flex items-center px-4">
                 <div class="flex-shrink-0">
                     @if(!auth()->user()->avatar)
                         <svg class="h-10 w-10 fill-current text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -38,11 +38,10 @@
                 </div>
 
                 <div class="ml-3">
-                
                     <div class="font-medium text-base text-truegray-300">{{ Auth::user()->name }}</div>
                     <div class="font-medium text-sm text-truegray-200">{{ Auth::user()->email }}</div>
                 </div>
-            </div>
+            </a>
 
             <div class="mt-3 space-y-1">
                 <form method="POST" action="{{ route('logout') }}">

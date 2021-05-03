@@ -15,7 +15,7 @@ class CreateRedirectionStatisticsTable extends Migration
     {
         Schema::create('redirection_statistics', function (Blueprint $table) {
             $table->id();
-            $table->foreign('id')->references('id')->on('redirections');
+            $table->foreign('id')->references('id')->on('redirections')->onDelete('cascade');
             $table->integer('usage');
             $table->timestamps();
         });
