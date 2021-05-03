@@ -7,11 +7,11 @@
                 d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
         </svg>
         @else
-        <img class="h-20 w-20 rounded-full shadow" src="{{ $user->avatar }}"></img>
+            <img class="h-20 w-20 rounded-full shadow" src="{{ $user->avatar }}"></img>
         @endif
     </div>
     <div class="ml-4 my-auto flex flex-col">
-        <span class="text-lg font-semibold overflow-hidden">
+        <span class="text-lg font-semibold overflow-hidden break-all h-6 w-64" title="{{ $user->name }}">
             {{ $user->name }}
 
             @if($user->can('admin'))
@@ -33,8 +33,9 @@
             {{ $user->provider }}
         </span>
         @if($edit ?? '')
-            <a href="{{ route('admin.users.edit', [$user]) }}">
-                <x-button class="rounded shadow text-white mt-1">
+            <a href="{{ route('admin.users.edit', [$user]) }}" class="flex">
+                <div class="flex-grow"></div>
+                <x-button class="rounded shadow text-white mt-1 -mr-2">
                     Edit
                 </x-button>
             </a>

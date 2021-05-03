@@ -24,7 +24,7 @@
                 </div>
                 <div class="flex flex-wrap my-4">
                     @foreach($users as $user)
-                    <x-user-card :user="$user" class="w-96 mx-auto my-1"></x-user-card>
+                    <x-user-card :user="$user" :edit="true" class="w-96 mx-auto my-1"></x-user-card>
                     @endforeach
                 </div>
                 {{ $users->links() }}
