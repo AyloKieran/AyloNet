@@ -41,10 +41,13 @@ class RegisteredUserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'provider' => "aylo.net",
             'password' => Hash::make($request->password),
         ]);
 
         event(new Registered($user));
+
+        $user->sendEmailVerificationNotification();
 
         Auth::login($user);
 
