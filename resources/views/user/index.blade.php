@@ -10,20 +10,22 @@
     </div>
 
     <x-card class="pt-4">
-        <h1 class="text-xl font-semibold">User Details</h1>
+        <h1 class="text-xl font-semibold text-center">User Details</h1>
         <div class="mt-2 flex">
             <x-user-card :user="auth()->user()" class="mx-auto"></x-user-card>
         </div>
     </x-card>
 
     <x-card class="pt-4">
-        <h1 class="text-xl font-semibold">Update User Details</h1>
-        content here.
+        <h1 class="text-xl font-semibold text-center">Update User Details</h1>
+        <div class="text-center">
+            content here.
+        </div>
     </x-card>
 
     <x-card class="pt-4">
-        <h1 class="text-xl font-semibold">User Actions</h1>
-        <div class="flex flex-col w-72 mt-4">
+        <h1 class="text-xl font-semibold text-center">User Actions</h1>
+        <div class="flex flex-col sm:w-72 w-full mx-auto mt-4">
             <div class="flex">
                 <span class="my-auto flex-grow font-bold">Delete Account</span>
                 <form method="POST" action="{{ route('deleteUser') }}">

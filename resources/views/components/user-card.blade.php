@@ -1,5 +1,7 @@
+@props(['user', 'edit'])
+
 <div {{ $attributes->merge(['class' => 'flex bg-gray-100 rounded shadow p-3 pr-5'])}}>
-    <div>
+    <div class="h-20 w-20 flex-shrink-0">
         @if(!$user->avatar)
         <svg class="h-20 w-20 p-1 fill-current text-gray-400 rounded-full bg-gray-600"
             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -10,8 +12,8 @@
             <img class="h-20 w-20 rounded-full shadow" src="{{ $user->avatar }}"></img>
         @endif
     </div>
-    <div class="ml-4 my-auto flex flex-col">
-        <span class="text-lg font-semibold overflow-hidden break-all h-6 w-64" title="{{ $user->name }}">
+    <div class="ml-4 my-auto flex flex-col break-all">
+        <span class="text-lg font-semibold h-6 overflow-hidden" title="{{ $user->name }}">
             {{ $user->name }}
 
             @if($user->can('admin'))
@@ -20,7 +22,7 @@
             </span>
             @endif
         </span>
-        <span class="text-sm">
+        <span class="text-sm h-5 overflow-hidden">
             {{ $user->email }}
             @if($user->email_verified_at)
             <span class="text-green-700 text-sm">(Verified)</span>
@@ -33,9 +35,8 @@
             {{ $user->provider }}
         </span>
         @if($edit ?? '')
-            <a href="{{ route('admin.users.edit', [$user]) }}" class="flex">
-                <div class="flex-grow"></div>
-                <x-button class="rounded shadow text-white mt-1 -mr-2">
+            <a href="{{ route('admin.users.edit', [$user]) }}">
+                <x-button class="rounded shadow text-white mt-1">
                     Edit
                 </x-button>
             </a>

@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="w-full flex flex-col bg-gray-800 md:hidden">
+<nav x-data="{ open: false }" class="w-full flex flex-col bg-gray-800 md:hidden fixed">
     <div class="flex items-center md:hidden p-1">
         <div class="pl-2">
             <a href="{{ route('home') }}">
