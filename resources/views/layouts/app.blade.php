@@ -16,12 +16,15 @@
 
         <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
+        {{ $head ?? '' }}
+
         <style>
             {{ $styles ?? '' }}
         </style>
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        {{ $scripts ?? '' }}
 
     </head>
     <body class="flex flex-col md:flex-row font-sans antialiased text-white min-h-screen">
@@ -30,7 +33,7 @@
         </div>
         <div class="bg-truegray-100 flex-grow">
             <!-- Page Content -->
-            <main class="flex-grow text-black md:pl-72">
+            <main class="flex-grow text-black md:pl-72 pt-12 md:pt-0">
                 {{ $slot }}
             </main>
         </div>

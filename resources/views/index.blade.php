@@ -23,14 +23,14 @@
     }
     </x-slot>
 
-    <div class="w-full h-screen bg-gray-100 flex flex-col">
+    <div class="w-full bg-gray-100 flex flex-col md:h-screen mt-32 md:mt-0">
         <div class="flex-grow"></div>
         <div class="flex flex-col items-center mb-32">
             <section class="text-6xl lg:text-7xl pt-20 font-extrabold text-gray-900 flex flex-col">
                 <span class="wave">👋</span>
             </section>
             <span class="text-4xl lg:text-5xl mx-auto mt-5 mb-2 font-bold">Howdy, I'm <span class="underline bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-red-500">Kieran</span></span>
-            <span class="text-2xl lg:text-3xl mb-5 font-semibold text-gray-700">I make web stuff.</span>
+            <span class="text-xl lg:text-2xl mb-5 font-semibold text-gray-700">I make web stuff.</span>
             <div class="flex flex-gap-2">
                 <a href="/portfolio" class="text-md lg:text-lg font-semibold p-1 px-3 rounded-2xl text-gray-700 hover:shadow-xl hover:text-white hover:bg-gray-700 transition">Portfolio</a>
                 <a href="/github" class="text-md lg:text-lg font-semibold p-1 px-3 rounded-2xl text-gray-700 hover:shadow-xl hover:text-white hover:bg-gray-700 transition">Github</a>
