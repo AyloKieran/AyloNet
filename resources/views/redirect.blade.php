@@ -7,9 +7,9 @@
         <meta http-equiv="refresh" content="0;url={{ $url }}" />
     </x-slot>
 
-    <div class="w-full bg-gray-100 flex flex-col">
+    <div class="w-full bg-gray-100 flex flex-col md:h-screen mt-32 md:mt-0">
         <div class="flex-grow"></div>
-        <div class="flex flex-col items-center mt-32 md:mt-64">
+        <div class="flex flex-col items-center">
             <svg height="100" width="100">
                 <circle cx="50" cy="50" r="31" stroke="#679b08" stroke-width="9.5" fill="none" />
                 <circle cx="50" cy="50" r="6" stroke="#679b08" stroke-width="1" fill="#679b08" />

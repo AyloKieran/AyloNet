@@ -16,11 +16,17 @@
 
     <div :class="{'block': open, 'hidden': ! open}" class="hidden md:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
-                {{ __('Home') }}
+            <x-responsive-nav-link :href="route('home')" :icon="'fas fa-home'" :active="request()->routeIs('home')">
+                Home
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="'portfolio'" :active="request()->path() == 'portfolio'">
-                {{ __('Portfolio') }}
+            <x-responsive-nav-link :href="'/portfolio'" :active="request()->path() == 'portfolio'">
+                Portfolio
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="'/github'">
+                Github
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="'/contact'" :active="request()->path() == 'contact'">
+                Contact
             </x-responsive-nav-link>
         </div>
 
@@ -44,15 +50,13 @@
             </a>
 
             <div class="mt-3 space-y-1">
+                @can('admin')
+                    <x-responsive-nav-link :href="'admin'">
+                        {{ __('Admin') }}
+                    </x-responsive-nav-link>
+                @endcan
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    
-                    @can('admin')
-                        <x-responsive-nav-link :href="'admin'">
-                            {{ __('Admin') }}
-                        </x-responsive-nav-link>
-                    @endcan
-
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
@@ -61,9 +65,14 @@
                 </form>
             </div>
             @else
-                <x-responsive-nav-link :href="route('login')">
+                <div class="flex">
+                <x-responsive-nav-link :href="route('login')" class="flex-grow text-center">
                         {{ __('Log in') }}
                 </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('register')" class="flex-grow text-center">
+                        {{ __('Register') }}
+                </x-responsive-nav-link>
+                </div>
             @endauth
         </div>
     </div>

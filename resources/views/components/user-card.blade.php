@@ -1,6 +1,6 @@
 @props(['user', 'edit'])
 
-<div {{ $attributes->merge(['class' => 'flex bg-gray-100 rounded shadow p-3 pr-5'])}}>
+<div {{ $attributes->merge(['class' => 'flex bg-gray-100 rounded shadow p-3 pr-5 w-screen sm:w-96'])}}>
     <div class="h-20 w-20 flex-shrink-0">
         @if(!$user->avatar)
         <svg class="h-20 w-20 p-1 fill-current text-gray-400 rounded-full bg-gray-600"
