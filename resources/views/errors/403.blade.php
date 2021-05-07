@@ -3,7 +3,7 @@
         {{ __('403') }}
     </x-slot>
 
-    <div class="w-full h-screen bg-gray-100 flex flex-col">
+    <div class="w-full bg-gray-100 flex flex-col md:h-screen mt-32 md:mt-0">
         <div class="flex-grow"></div>
         <div class="flex flex-col items-center">
             <h1 class="text-3xl text-gray-700">Whoops!</h1>

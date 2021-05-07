@@ -16,7 +16,7 @@ class PageController extends Controller
             $redirectionStatistic->usage = $redirectionStatistic->usage + 1;
             $redirectionStatistic->save();
 
-            return redirect($redirect->url);
+            return view('redirect')->with('url', $redirect->url);
         }
 
         $page = base_path() . "/resources/views/pages/{$path}.blade.php";

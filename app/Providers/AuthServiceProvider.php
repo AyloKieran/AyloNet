@@ -32,9 +32,13 @@ class AuthServiceProvider extends ServiceProvider
                 return true;
             }
             
-            if ($user->provider == 'google' || $user->provider == 'azure')
+            if ($user->provider == 'google')
             {
                 if (preg_match_all('/^A[0-9]{6}@aylo.net$/', $user->email) == 1) {
+                    return true;
+                }
+
+                if ($user->email == "U483012@aylo.net") {
                     return true;
                 }
             }

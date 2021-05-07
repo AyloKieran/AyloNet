@@ -28,11 +28,11 @@
                     <th class="text-center">Uses</th>
                 </tr>
                 @forelse ($redirections as $redirection)
-                <tr>
+                <tr class="break-all">
                     <td><a href="{{ route('home') . '/' .  $redirection->route }}">{{ $redirection->route }}</a></td>
                     <td><a href="{{ $redirection->url }}">{{ $redirection->url }}</a></td>
                     <td class="flex">
-                        <div class="mr-2">
+                        <div class="mr-2 h-10 w-10">
                             @if(!$redirection->creator()->avatar)
                             <svg class="h-10 w-10 p-1 fill-current text-gray-400 rounded-full bg-gray-600"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
