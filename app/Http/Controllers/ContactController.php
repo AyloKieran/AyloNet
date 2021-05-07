@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Mail;
 
 use Illuminate\Http\Request;
+use Mail;
+use App\Mail\ContactMail;
 
 class ContactController extends Controller
 {
@@ -16,23 +17,18 @@ class ContactController extends Controller
             'name' => ['required', 'min:3'],
             'email' => ['required', 'email'],
             'subject' => ['required', 'min:5'],
-            'message' => ['required', 'min:20'],
+            'message' => ['required', 'min:10'],
         ]);
 
-        $data['name'] = $request->get('name');
-        $data['email'] = $request->get('email');
-        $data['subject'] = $request->get('subject');
-        $data['message'] = $request->get('message');
+        $name = $request->get('name');
+        $email = $request->get('email');
+        $subject = $request->get('subject');
+        $message = $request->get('message');
 
         try {
-            Mail::send([], [], function($message) use($data) {
-                $message->to('kieran@aylo.net');
-                $message->replyTo($data['email']);
-                $message->cc($data['email']);
-                $message->subject($data['subject']);
-                $message->setBody("AUTOMATED EMAIL FROM CONTACT FORM\r\n\r\n" . $data['message'] . "\r\n\r\nFrom ". $data['name']);
-            });
-            
+            Mail::to('kieran@aylo.net')
+                ->queue(new ContactMail($subject, $name, $message, $email));
+
             return back()->with('success', 'Successfully sent email 😄');
         } catch (\Exception $e) {
             return back()->with('failure', 'Could not send email, try again later 😥');   
