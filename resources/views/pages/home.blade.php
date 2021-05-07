@@ -26,7 +26,7 @@
         </script>
     </x-slot>
 
-    <div class="w-full flex flex-col md:h-screen text-white" style="background: url('static/home/bg.png')">
+    <div class="w-full flex flex-col md:h-screen text-white" style="background: url('static/home/bg.webp')">
         <div class="flex-grow"></div>
         <div class="flex flex-wrap justify-center pt-4 my-6 sm:my-0">
         @foreach($mainlinks as $link)

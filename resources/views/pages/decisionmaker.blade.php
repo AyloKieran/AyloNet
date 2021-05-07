@@ -88,7 +88,7 @@
         }
 
         function checkValid() {
-            list = document.getElementsByTagName("input").length - 3
+            list = document.getElementsByTagName("input").length - 2
             input = document.getElementById("addvalue").value
 
             if (list > 1 && input != "") {
@@ -112,9 +112,17 @@
         {
             container = document.getElementById("container")
             text = document.createElement("h1")
-            text.setAttribute('class', "text-4xl font-bold mt-6 md:mt-12 mb-6")
+            text.setAttribute('class', "text-4xl font-bold mt-6 md:mt-12 mb-24")
             text.innerText = value
+            text2 = document.createElement("h2")
+            text2.setAttribute('class', "text-xl font-semibold")
+            text2.innerText = "Chosen from:"
+            text3 = document.createElement("h2")
+            text3.setAttribute('class', "text-lg text-gray-400")
+            text3.innerHTML = values.join("<br>")
             container.appendChild(text)
+            container.appendChild(text2)
+            container.appendChild(text3)
         }
     </script>
 </x-app-layout>
