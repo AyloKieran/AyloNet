@@ -6,18 +6,17 @@
     <x-slot name="styles">
     .wave {
         animation-name: wave-animation;
-        animation-duration: 2s;
+        animation-duration: 1s;
         transform-origin: 70% 70%;
         display: inline-block;
     }
 
     @keyframes wave-animation {
         0% { transform: rotate(0.0deg) }
-        10% { transform: rotate(14.0deg) scale(1.18) }
-        20% { transform: rotate(-8.0deg) scale(1) }
-        30% { transform: rotate(14.0deg) }
-        40% { transform: rotate(0.0deg) }
-        100% { transform: rotate(0.0deg) }
+        20% { transform: rotate(14.0deg) scale(1.18) }
+        40% { transform: rotate(-8.0deg) scale(1) }
+        60% { transform: rotate(14.0deg) }
+        80% { transform: rotate(0.0deg) }
     }
     </x-slot>
 

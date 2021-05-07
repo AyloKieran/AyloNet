@@ -33,11 +33,10 @@ class ContactController extends Controller
                 $message->setBody("AUTOMATED EMAIL FROM CONTACT FORM\r\n\r\n" . $data['message'] . "\r\n\r\nFrom ". $data['name']);
             });
             
-            $request->session()->now('success', 'Successfully sent email 😄');
+            return back()->with('success', 'Successfully sent email 😄');
         } catch (\Exception $e) {
-            $request->session()->now('failure', 'Could not send email, try again later 😥');   
+            return back()->with('failure', 'Could not send email, try again later 😥');   
         }
 
-        return view('contact');
     }
 }
