@@ -8,17 +8,17 @@
     </x-slot>
 
     <div class="text-center bg-white">
-        <div class="pt-16 text-white" style="background-image: url('static/portfolio/bg1.png')">
+        <div class="pt-16 text-white" style="background-image: url('static/portfolio/bg1.webp')">
             <div class="flex flex-col text-center">
                 <div class="flex-grow"></div> 
-                <img src="static/portfolio/kieran.jpg" class="rounded-full w-32 mx-auto"></img>
+                <img src="static/portfolio/kieran.webp" class="rounded-full w-32 mx-auto"></img>
                 <div class="flex flex-col ml-0 mt-3 mb-6 sm:mb-0 md:-mb-8">
                     <h1 class="font-bold text-3xl">Hello! I'm Kieran.</h1>
                     <div class="flex flex-row mx-auto">
                         <h2 class="text-lg text-gray-300 h-6 mr-1 mb-8 lg:mb-4" id="typed"></h2>
                     </div>
                 </div>
-                <img src="static/portfolio/separator1.png" class="w-100"></img>
+                <img src="static/portfolio/separator1.webp" class="w-100"></img>
                 <div class="flex-grow"></div> 
             </div>
         </div>
@@ -63,9 +63,9 @@
                 </div>
             </div>
         </div>
-        <div class="mt-6 text-white" style="background-image: url('static/portfolio/bg3.png')">
-            <img src="static/portfolio/separator2.png" class="w-100"></img>
-            <h2 class="text-2xl font-semibold mt-12 md:mt-8 lg:mt-0 mb-6">Education & Experience</h2>
+        <div class="mt-6 text-white" style="background-image: url('static/portfolio/bg3.webp')">
+            <img src="static/portfolio/separator2.webp" class="w-100"></img>
+            <h2 class="text-2xl font-semibold mt-8 md:mt-8 lg:mt-0 mb-6">Education & Experience</h2>
             <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row">
                 <div class="flex-1 flex-grow text-center sm:text-right md:text-center lg:text-right mx-2">
                     <h3 class="font-semibold text-lg">Past</h3>
@@ -99,10 +99,10 @@
                     <p class="text-sm">Software Development Placement (Web)</p>
                 </div>
             </div>
-            <div class="mt-8 mb-16 sm:mb-12 lg:mb-0">
+            <div class="mt-8 mb-12 lg:mb-0">
                 <a href="{{ route('contact') }}" class="text-md font-semibold p-1 px-3 rounded-3xl bg-gray-700 text-white hover:shadow-xl hover:text-white hover:bg-gray-900 transition">Contact for more info</a>
             </div>
-            <img src="static/portfolio/separator6.png" class="w-100"></img>
+            <img src="static/portfolio/separator6.webp" class="w-100"></img>
         </div>
         <div class="pt-6 lg:pt-0 text-white" style="background-color: #0397d6">
             <!-- <h2 class="text-2xl font-semibold">Harmony</h2> -->
@@ -110,8 +110,8 @@
             <h2 class="text-lg font-semibold text-gray-300 mb-10 -mt-5" style="margin-left: 4.5em;">Ecommerce Music Store</h2>
             <div class="flex flex-col lg:flex-row max-w-6xl px-4 xl:mx-auto text-left">
                 <div class="flex-1">
-                    <div class="flex-1 flex-grow flex flex-col bg-red-500 shadow-md">
-                        <img src="static/portfolio/Home_-_Harmony_-_Google_Chrome-07_11-42.png" class="bg-red-500"></img>
+                    <div class="flex-1 flex-grow flex flex-col">
+                        <img src="static/portfolio/harmony.webp"></img>
                     </div>
                     <div class="flex-grow"></div>
                 </div>
@@ -119,7 +119,7 @@
                     <div class="flex-1 mx-2 ml-0 lg:ml-4 flex flex-col flex-grow">
                         <div class="flex flex-col mt-4 lg:mt-0 flex-grow">
                             <p class="font-semibold">A Bispoke Ecommerce store for an online music shop.</p>
-                            <p class="text-sm font-semibold">Made to fit customer’s requirements which included:</p>
+                            <p class="text-sm font-semibold">Made with a group to fit customer’s requirements which included:</p>
                             <ul class="list-inside list-disc ml-2 text-gray-100">
                                 <li>Homepage</li>
                                 <ul class="list-inside list-disc ml-6 text-xs">
@@ -147,14 +147,14 @@
                     </div>
                 </div>
             </div>
-            <img src="static/portfolio/separator3.png" class="mt-8 sm:mt-6 w-100"></img>
+            <img src="static/portfolio/separator3.webp" class="mt-8 w-100"></img>
         </div>
         <div class="pt-6 sm:pt-0 pb-12">
             <h2 class="text-2xl font-semibold mb-6">Projects</h2>
             <div class="flex flex-col lg:flex-row max-w-6xl px-4 xl:mx-auto text-left">
                 <div class="flex-1">
                     <div class="flex-1 flex-grow flex flex-col mb-2 bg-gray-100 rounded-xl p-2 shadow-md">
-                        <img class="w-100 rounded-xl shadow" src="static/portfolio/PEI.png"></img>
+                        <img class="w-100 rounded-xl shadow" src="static/portfolio/PEI.webp"></img>
                         <div class="m-2 mb-0">
                             <h3 class="text-xl"><span class="font-semibold">Photography</span> - Experimental Imagery <span class="text-gray-700 text-sm">Jan 2019</span></h3>
                             <p class="text-sm mb-1">An A* Project based on breaking the rules of photography and carving your own path. For this, I also created a video outcome which went above and beyond the brief.</p>
@@ -169,7 +169,7 @@
                 <div class="flex-1 flex-grow flex flex-col">
                     <div class="flex-1 mx-2 flex flex-col mb-2 bg-gray-100 rounded-xl p-2 shadow-md">
                         <div class="flex">
-                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/PPS.png"></img>
+                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/PPS.webp"></img>
                             <div class="ml-2 flex-col">
                                 <h3 class="text-lg"><span class="font-semibold">Photography</span> - Parts and Sections <span class="text-gray-600 text-xs">Apr 2019</span></h3>
                                 <p class="text-sm mb-1">An A* Project based on breaking the rules of photography and carving your own path. For this, I also created a video outcome which went above and beyond the brief.</p>
@@ -184,7 +184,7 @@
 
                     <div class="flex-1 mx-2 flex flex-col mb-2 bg-gray-100 rounded-xl p-2 shadow-md">
                         <div class="flex">
-                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/ALG.png"></img>
+                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/ALG.webp"></img>
                             <div class="ml-2 flex flex-col">
                                 <h3 class="text-lg"><span class="font-semibold">ayloNet</span> <span class="text-gray-600 text-xs">2019 - Current</span></h3>
                                 <p class="text-sm mb-1">A collection of servers and services that run my home automation and media management.</p>
@@ -199,7 +199,7 @@
 
                     <div class="flex-1 mx-2 flex flex-col mb-2 bg-gray-100 rounded-xl p-2 shadow-md">
                         <div class="flex">
-                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/GPC.png"></img>
+                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/GPC.webp"></img>
                             <div class="ml-2 flex flex-col">
                                 <h3 class="text-lg"><span class="font-semibold">Graphic Products</span> Coursework <span class="text-gray-600 text-xs">Jun 2017</span></h3>
                                 <p class="text-sm mb-1">An A* project created for GCSE Graphics Products to a proposal surrounding the design and production of bottles and their packaging.</p>
@@ -215,8 +215,8 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="text-white" style="background-image: url('static/portfolio/bg2.png')">
-            <img src="static/portfolio/separator4.png" class="w-100"></img>
+        <!-- <div class="text-white" style="background-image: url('static/portfolio/bg2.webp')">
+            <img src="static/portfolio/separator4.webp" class="w-100"></img>
             <h2 class="text-2xl font-semibold mt-8 sm:mt-0">Contact</h2>
             <p class="text-gray-300">See something you like or want more info?</p>
             <p class="text-gray-300">Give me a shout and I'll get back to you ASAP 😄</p>
@@ -224,7 +224,7 @@
             <div class="mx-4 sm:mx-0">
                 <x-contact-card class="bg-gray-300 text-black"/>
             </div>
-            <img src="static/portfolio/separator1.png" class="mt-8 w-100"></img>
+            <img src="static/portfolio/separator1.webp" class="mt-8 w-100"></img>
             <span id="contact"></span>
         </div> -->
     </div>
