@@ -13,7 +13,7 @@
                 <div class="flex-grow"></div> 
                 <img src="static/portfolio/kieran.jpg" class="rounded-full w-32 mx-auto"></img>
                 <div class="flex flex-col ml-0 mt-3 mb-6 sm:mb-0 md:-mb-8">
-                    <h1 class="font-semibold text-3xl">Hello! I'm Kieran.</h1>
+                    <h1 class="font-bold text-3xl">Hello! I'm Kieran.</h1>
                     <div class="flex flex-row mx-auto">
                         <h2 class="text-lg text-gray-300 h-6 mr-1 mb-8 lg:mb-4" id="typed"></h2>
                     </div>
@@ -111,7 +111,7 @@
             <div class="flex flex-col lg:flex-row max-w-6xl px-4 xl:mx-auto text-left">
                 <div class="flex-1">
                     <div class="flex-1 flex-grow flex flex-col bg-red-500 shadow-md">
-                        <img src="static/portfolio/Home_-_Harmony_-_Google_Chrome-07_11-42.png" class="opacity-50 bg-red-500"></img>
+                        <img src="static/portfolio/Home_-_Harmony_-_Google_Chrome-07_11-42.png" class="bg-red-500"></img>
                     </div>
                     <div class="flex-grow"></div>
                 </div>
@@ -141,7 +141,7 @@
                             <div class="flex-grow"></div>
                             <div class="flex">
                                 <div class="flex-grow"></div>
-                                <a class="text-xs p-2 bg-blue-400 opacity-90 border border-blue-500 hover:bg-blue-500 hover:border-blue-600 hover:opacity-100 rounded-lg transition shadow-sm hover:shadow-md" href="https://harmony.aylo.net">View Project <i class="fas fa-angle-double-right" aria-hidden="true"></i></a>
+                                <a class="text-xs p-2 bg-blue-400 border border-blue-500 hover:bg-blue-500 hover:border-blue-600 rounded-lg transition shadow-sm hover:shadow-md" href="https://harmony.aylo.net">View Project <i class="fas fa-angle-double-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
