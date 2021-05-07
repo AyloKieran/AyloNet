@@ -22,6 +22,17 @@
             {{ $styles ?? '' }}
         </style>
 
+        @if (env('APP_ENV') == 'production')
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4TL5T3RSNE"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-4TL5T3RSNE');
+        </script>
+        @endif
+
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
         {{ $scripts ?? '' }}
