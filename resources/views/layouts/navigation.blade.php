@@ -19,6 +19,11 @@
             <x-responsive-nav-link :href="route('home')" :icon="'fas fa-home'" :active="request()->routeIs('home')">
                 Home
             </x-responsive-nav-link>
+            @can('homeLinks')
+            <x-responsive-nav-link :href="'/home'" :active="request()->path() == 'home'">
+                ayloHome
+            </x-responsive-nav-link>
+            @endCan
             <x-responsive-nav-link :href="'/portfolio'" :active="request()->path() == 'portfolio'">
                 Portfolio
             </x-responsive-nav-link>
@@ -39,7 +44,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
                     @else
-                        <img class="h-10 w-10 rounded-full" src="{{ auth()->user()->avatar }}"></img>
+                        <img class="h-10 w-10 rounded-full object-cover" src="{{ auth()->user()->avatar }}"></img>
                     @endif
                 </div>
 
@@ -89,6 +94,11 @@
         <x-nav-link :href="route('home')" :icon="'fas fa-home'" :active="request()->routeIs('home')">
             Home
         </x-nav-link>
+        @can('homeLinks')
+        <x-nav-link :href="'/home'" :active="request()->path() == 'home'">
+            ayloHome
+        </x-nav-link>
+        @endCan
         <x-nav-link :href="'/portfolio'" :active="request()->path() == 'portfolio'">
             Portfolio
         </x-nav-link>
@@ -110,7 +120,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
             @else
-                <img class="h-10 w-10 rounded-full" src="{{ auth()->user()->avatar }}"></img>
+                <img class="h-10 w-10 rounded-full object-cover" src="{{ auth()->user()->avatar }}"></img>
             @endif
             </div>
 

@@ -19,6 +19,16 @@ Route::prefix('admin')->group(function() {
 
     Route::get('users', [AdminUserController::class, 'index'])->name('admin.users');
     Route::prefix('users')->group(function() {
-        Route::get('{user}/edit', [AdminUserController::class, 'edit'])->name('admin.users.edit');
+        Route::prefix('{user}')->group(function() {
+            Route::post('sendVerificationEmail', [AdminUserController::class, 'sendVerificationEmail'])->name('admin.users.resendEmailVerification');
+            Route::get('edit', [AdminUserController::class, 'edit'])->name('admin.users.edit');
+            Route::delete('delete', [AdminUserController::class, 'destroy'])->name('admin.users.delete');
+            Route::prefix('update')->group(function() {
+                Route::patch('avatar', [AdminUserController::class, 'updateAvatar'])->name('admin.users.update.avatar');
+                Route::patch('details', [AdminUserController::class, 'updateDetails'])->name('admin.users.update.details');
+                Route::patch('password', [AdminUserController::class, 'updatePassword'])->name('admin.users.update.password');
+                Route::patch('role', [AdminUserController::class, 'updateRole'])->name('admin.users.update.role');
+            });
+        });
     });
 });
