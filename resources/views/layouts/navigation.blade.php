@@ -56,7 +56,7 @@
 
             <div class="mt-3 space-y-1">
                 @can('admin')
-                    <x-responsive-nav-link :href="'admin'">
+                    <x-responsive-nav-link :href="'/admin'">
                         {{ __('Admin') }}
                     </x-responsive-nav-link>
                 @endcan
