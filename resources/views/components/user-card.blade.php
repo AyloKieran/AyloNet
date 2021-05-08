@@ -9,7 +9,11 @@
                 d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
         </svg>
         @else
-            <img class="h-20 w-20 rounded-full shadow" src="{{ $user->avatar }}"></img>
+            @if($user->provider != "google")
+                <img class="h-20 w-20 rounded-full shadow object-cover" src="{{ '/' . $user->avatar }}"></img>
+            @else
+                <img class="h-20 w-20 rounded-full shadow object-cover" src="{{ $user->avatar }}"></img>
+            @endif
         @endif
     </div>
     <div class="ml-4 my-auto flex flex-col break-all">

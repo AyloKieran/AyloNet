@@ -37,10 +37,15 @@ class AuthServiceProvider extends ServiceProvider
                 if (preg_match_all('/^A[0-9]{6}@aylo.net$/', $user->email) == 1) {
                     return true;
                 }
+            }
 
-                if ($user->email == "U483012@aylo.net") {
-                    return true;
-                }
+            return false;
+        });
+
+        Gate::define('homeLinks', function (User $user) {
+            if ($user->user_role == 'homeLinks')
+            {
+                return true;
             }
 
             return false;

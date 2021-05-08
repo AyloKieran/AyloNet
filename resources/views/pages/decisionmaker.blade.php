@@ -75,25 +75,23 @@
             if (checkValid()) {
                 for (let item of document.getElementsByClassName("input")) {
                     value = item.value
-                    console.log(value)
                     if (value != "") {
                         values.push(value)
                     }
                 }
                 clearPage()
                 chosenvalue = choose(values)
-                console.log(chosenvalue)
                 createValue(chosenvalue)
             }
         }
 
         function checkValid() {
-            list = document.getElementsByTagName("input").length - 2
+            list = document.getElementsByClassName("input").length
             input = document.getElementById("addvalue").value
 
             if (list > 1 && input != "") {
                 return true
-            } else if (list > 2) {
+            } else if (list > 1) {
                 return true
             }
         }

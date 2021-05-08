@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="title">
-        Home
+        Home Links
     </x-slot>
 
     @php
