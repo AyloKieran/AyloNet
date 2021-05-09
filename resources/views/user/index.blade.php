@@ -151,10 +151,10 @@
         <div class="flex flex-col sm:w-72 w-full mx-auto mt-4">
             @if(auth()->user()->provider == "aylo.net")
                 <div class="flex mb-1">
-                    <span class="my-auto flex-grow font-bold">Resend Email Verification</span>
+                    <span class="my-auto flex-grow font-bold">Send Email Verification</span>
                     <form method="POST" action="{{ route('user.resendEmailVerification') }}">
                         @CSRF
-                        <x-button class="bg-green-500 border-green-600 hover:bg-green-600 hover:border-green-700 focus:ring-green-200">Send</x-button>
+                        <x-button class="bg-green-500 border-green-600 hover:bg-green-600 hover:border-green-700 focus:ring-green-200 w-24">Send</x-button>
                     </form>
                 </div>
             @endif
@@ -163,7 +163,7 @@
                 <form method="POST" action="{{ route('user.delete') }}">
                     @CSRF
                     @METHOD('DELETE')
-                    <x-button class="bg-red-500 border-red-600 hover:bg-red-600 hover:border-red-700 focus:ring-red-200" onclick="return confirm('You are deleting your account; this action is irreversable. \\n\\nThis will also remove any of your actions on the site.\\n\\nAre you sure you want to continue?')">Delete</x-button>
+                    <x-button class="bg-red-500 border-red-600 hover:bg-red-600 hover:border-red-700 focus:ring-red-200 w-24" onclick="return confirm('You are deleting your account; this action is irreversable. \\n\\nThis will also remove any of your actions on the site.\\n\\nAre you sure you want to continue?')">Delete</x-button>
                 </form>
             </div>
         </div>
