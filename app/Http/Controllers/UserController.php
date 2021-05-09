@@ -23,7 +23,7 @@ class UserController extends Controller
 
         if($user->provider == "aylo.net") {
             $attributes = request()->validate([
-                'avatar' => ['file', 'max:1024', 'mimes:jpeg,png,bmp,tiff,webp']
+                'avatar' => ['file', 'max:2560', 'mimes:jpeg,png,bmp,tiff,webp']
             ]);
 
             if(request('avatar')) {
