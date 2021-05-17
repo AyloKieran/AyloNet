@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Redirections;
 use App\Models\RedirectionStatistics;
+use App\Models\Posts;
 
 class PageController extends Controller
 {
@@ -17,6 +18,11 @@ class PageController extends Controller
             $redirectionStatistic->save();
 
             return view('redirect')->with('url', $redirect->url);
+        }
+
+        $post = Posts::where('route', $path)->first();
+        if($post) {
+            return view('post')->with('post', $post);
         }
 
         $page = base_path() . "/resources/views/pages/{$path}.blade.php";

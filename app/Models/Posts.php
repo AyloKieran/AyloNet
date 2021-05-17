@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Redirections extends Model
+class Posts extends Model
 {
     use HasFactory;
 
@@ -14,11 +14,6 @@ class Redirections extends Model
     public function getRouteKeyName()
     {
         return 'route';
-    }
-
-    public function statistics()
-    {
-        return $this->hasOne(RedirectionStatistics::class, 'id');
     }
 
     public function creator()
