@@ -14,13 +14,11 @@ class CreateRedirectionsTable extends Migration
     public function up()
     {
         Schema::create('redirections', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->uuid('id')->primary();
+            $table->uuid('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('route')->unique();
             $table->longText('url');
             $table->timestamps();
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
