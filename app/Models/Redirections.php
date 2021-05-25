@@ -4,17 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Uuids;
 
 class Redirections extends Model
 {
-    use HasFactory;
+    use HasFactory, Uuids;
 
     protected $guarded = [];
-
-    public function getRouteKeyName()
-    {
-        return 'route';
-    }
 
     public function statistics()
     {

@@ -15,7 +15,7 @@
 
     <div class="flex pt-4 flex-col xl:flex-row">
         <div class="flex-grow"></div>
-        <x-card>
+        <x-card class="flex-grow">
                 {!! $post->content !!}
         </x-card>
         <x-card class="w-100 xl:w-96 xl:pl-0">

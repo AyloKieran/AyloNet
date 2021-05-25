@@ -118,7 +118,7 @@
                 <div class="flex-1 flex-grow flex flex-col">
                     <div class="flex-1 mx-2 ml-0 lg:ml-4 flex flex-col flex-grow">
                         <div class="flex flex-col mt-4 lg:mt-0 flex-grow">
-                            <p class="font-semibold">A Bispoke Ecommerce store for an online music shop.</p>
+                            <p class="font-semibold">A Bespoke Ecommerce store for an online music shop.</p>
                             <p class="text-sm font-semibold">Made with a group to fit customer’s requirements which included:</p>
                             <ul class="list-inside list-disc ml-2 text-gray-100">
                                 <li>Homepage</li>
