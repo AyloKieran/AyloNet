@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5258996b830d577cd0299c03187e5bea",
+    "content-hash": "29929347e77dd31c2c5d7ed146722fb4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2958,114 +2958,6 @@
             "time": "2020-08-18T17:17:46+00:00"
         },
         {
-            "name": "socialiteproviders/manager",
-            "version": "4.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SocialiteProviders/Manager.git",
-                "reference": "0f5e82af0404df0080bdc5c105cef936c1711524"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/Manager/zipball/0f5e82af0404df0080bdc5c105cef936c1711524",
-                "reference": "0f5e82af0404df0080bdc5c105cef936c1711524",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "^6.0|^7.0|^8.0",
-                "laravel/socialite": "~4.0|~5.0",
-                "php": "^7.2 || ^8.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.2",
-                "phpunit/phpunit": "^9.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "SocialiteProviders\\Manager\\ServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "SocialiteProviders\\Manager\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Andy Wendt",
-                    "email": "andy@awendt.com"
-                },
-                {
-                    "name": "Anton Komarev",
-                    "email": "a.komarev@cybercog.su"
-                },
-                {
-                    "name": "Miguel Piedrafita",
-                    "email": "soy@miguelpiedrafita.com"
-                },
-                {
-                    "name": "atymic",
-                    "email": "atymicq@gmail.com",
-                    "homepage": "https://atymic.dev"
-                }
-            ],
-            "description": "Easily add new or override built-in providers in Laravel Socialite.",
-            "homepage": "https://socialiteproviders.com/",
-            "support": {
-                "issues": "https://github.com/SocialiteProviders/Manager/issues",
-                "source": "https://github.com/SocialiteProviders/Manager/tree/4.0.1"
-            },
-            "time": "2020-12-01T23:09:06+00:00"
-        },
-        {
-            "name": "socialiteproviders/microsoft-azure",
-            "version": "4.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SocialiteProviders/Microsoft-Azure.git",
-                "reference": "7808764f777a01df88be9ca6b14d683e50aaf88a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SocialiteProviders/Microsoft-Azure/zipball/7808764f777a01df88be9ca6b14d683e50aaf88a",
-                "reference": "7808764f777a01df88be9ca6b14d683e50aaf88a",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": "^7.2 || ^8.0",
-                "socialiteproviders/manager": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "SocialiteProviders\\Azure\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Chris Hemmings",
-                    "email": "chris@hemmin.gs"
-                }
-            ],
-            "description": "Microsoft Azure OAuth2 Provider for Laravel Socialite",
-            "support": {
-                "source": "https://github.com/SocialiteProviders/Microsoft-Azure/tree/4.2.0"
-            },
-            "time": "2020-12-01T23:10:59+00:00"
-        },
-        {
             "name": "spatie/laravel-google-calendar",
             "version": "3.3.1",
             "source": {
@@ -3139,6 +3031,57 @@
                 }
             ],
             "time": "2021-04-13T17:06:03+00:00"
+        },
+        {
+            "name": "spatie/last-fm-now-playing",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/last-fm-now-playing.git",
+                "reference": "1835b2e49470391e3a86a0a097198d48212f45c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/last-fm-now-playing/zipball/1835b2e49470391e3a86a0a097198d48212f45c9",
+                "reference": "1835b2e49470391e3a86a0a097198d48212f45c9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5|^7.0|^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": ">=0.9.9",
+                "phpunit/phpunit": "^4.8.36"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\NowPlaying\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Get track info that a user is currently playing",
+            "homepage": "https://github.com/spatie/last-fm-now-playing",
+            "keywords": [
+                "last-fm-now-playing",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/last-fm-now-playing/issues",
+                "source": "https://github.com/spatie/last-fm-now-playing/tree/1.1.2"
+            },
+            "time": "2020-12-11T20:38:05+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
