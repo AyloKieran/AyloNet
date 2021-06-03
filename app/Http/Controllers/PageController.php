@@ -27,7 +27,6 @@ class PageController extends Controller
 
         $page = base_path() . "/resources/views/pages/{$path}.blade.php";
         if(file_exists($page)){
-            // dd($page);
             return view('pages/'. $path);
         }
 
