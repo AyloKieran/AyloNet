@@ -7,7 +7,7 @@ use App\Http\Controllers\PageController;
 
 Route::get('/', function () {return view('index');})->name('home');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-Route::post('/contact', [ContactController::class, 'contact'])->middleware('throttle:10,3');
+Route::post('/contact', [ContactController::class, 'contact']);
 
 Route::get('/user', [UserController::class, 'index'])->name('user');
 Route::prefix('user')->group(function() {

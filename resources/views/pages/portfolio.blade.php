@@ -8,7 +8,7 @@
     </x-slot>
 
     <div class="text-center bg-white">
-        <div class="pt-16 text-white" style="background-image: url('static/portfolio/bg1.webp')">
+        <div class="pt-16 text-white" style="background-image: url('static/portfolio/bg1.webp'); background-repeat: no-repeat; background-size: cover;">
             <div class="flex flex-col text-center">
                 <div class="flex-grow"></div> 
                 <img src="static/portfolio/kieran.webp" class="rounded-full w-32 mx-auto"></img>
@@ -63,7 +63,7 @@
                 </div>
             </div>
         </div>
-        <div class="mt-6 text-white" style="background-image: url('static/portfolio/bg3.webp')">
+        <div class="mt-6 text-white" style="background-image: url('static/portfolio/bg3.webp'); background-repeat: no-repeat; background-size: cover;">
             <img src="static/portfolio/separator2.webp" class="w-100"></img>
             <h2 class="text-2xl font-semibold mt-8 md:mt-8 lg:mt-0 mb-6">Education & Experience</h2>
             <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row">
@@ -215,7 +215,7 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="text-white" style="background-image: url('static/portfolio/bg2.webp')">
+        <!-- <div class="text-white" style="background-image: url('static/portfolio/bg2.webp'); background-repeat: no-repeat; background-size: cover;">
             <img src="static/portfolio/separator4.webp" class="w-100"></img>
             <h2 class="text-2xl font-semibold mt-8 sm:mt-0">Contact</h2>
             <p class="text-gray-300">See something you like or want more info?</p>
