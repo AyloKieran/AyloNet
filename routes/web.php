@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\OverlayController;
 
 Route::get('/', function () {return view('index');})->name('home');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
@@ -20,6 +21,8 @@ Route::prefix('user')->group(function() {
     });
 
 });
+
+Route::get('/overlay', [OverlayController::class, 'index'])->name('overlay');
 
 require __DIR__.'/auth.php';
 
