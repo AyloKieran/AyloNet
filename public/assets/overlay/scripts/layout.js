@@ -74,6 +74,14 @@ function clearOverlay() {
         nowPlaying = null
     }
 
+    if (schedule) {
+        clearInterval(schedule)
+        schedule = null
+
+        clearInterval(eventsProgress)
+        eventsProgress = null
+    }
+
     container = document.getElementById("container")
     container.innerHTML = "";
 }
