@@ -3,51 +3,53 @@ let nowPlayingData = {}
 let nowPlayingShowing = null
 
 function createNowPlaying() {
-    panel = document.getElementById("panel")
+    if (overlayData.components.nowplaying.shown == "true") {
+        panel = document.getElementById("panel")
 
-    np = document.createElement("div")
-    np.setAttribute("id", "nowplayinghidden")
+        np = document.createElement("div")
+        np.setAttribute("id", "nowplayinghidden")
 
-    npta = document.createElement("table")
-    npta.setAttribute("id", "nowplayingtable")
+        npta = document.createElement("table")
+        npta.setAttribute("id", "nowplayingtable")
 
-    tr1 = document.createElement("tr")
+        tr1 = document.createElement("tr")
 
-    td1 = document.createElement("td")
-    td1.setAttribute("rowspan", "2")
-    td1.setAttribute("id", "nowplayingimage")
-    npi = document.createElement("img")
-    npi.setAttribute("id", "nowplayingimg")
-    td1.appendChild(npi)
+        td1 = document.createElement("td")
+        td1.setAttribute("rowspan", "2")
+        td1.setAttribute("id", "nowplayingimage")
+        npi = document.createElement("img")
+        npi.setAttribute("id", "nowplayingimg")
+        td1.appendChild(npi)
 
-    td2 = document.createElement("td")
-    npt = document.createElement("h5")
-    npt.setAttribute("id", "nowplayingtitle")
-    npt.innerText = "Loading"
-    td2.appendChild(npt)
+        td2 = document.createElement("td")
+        npt = document.createElement("h5")
+        npt.setAttribute("id", "nowplayingtitle")
+        npt.innerText = "Loading"
+        td2.appendChild(npt)
 
-    tr1.appendChild(td1)
-    tr1.appendChild(td2)
+        tr1.appendChild(td1)
+        tr1.appendChild(td2)
 
-    tr2 = document.createElement("tr")
+        tr2 = document.createElement("tr")
 
-    td3 = document.createElement("td")
-    npa = document.createElement("h5")
-    npa.setAttribute("id", "nowplayingartist")
-    npa.innerText = "Loading"
-    td3.appendChild(npa)
+        td3 = document.createElement("td")
+        npa = document.createElement("h5")
+        npa.setAttribute("id", "nowplayingartist")
+        npa.innerText = "Loading"
+        td3.appendChild(npa)
 
-    tr2.appendChild(td3)
+        tr2.appendChild(td3)
 
-    npta.appendChild(tr1)
-    npta.appendChild(tr2)
+        npta.appendChild(tr1)
+        npta.appendChild(tr2)
 
 
-    np.appendChild(npta)
+        np.appendChild(npta)
 
-    panel.appendChild(np)
+        panel.appendChild(np)
 
-    initNowPlaying()
+        initNowPlaying()
+    }
 }
 
 function showNowPlaying() {
@@ -73,7 +75,7 @@ function updateNowPlaying(title = "Title", artist = "Artist", img = "") {
 }
 function getNowPlaying() {
     if (nowPlaying) {
-        fetch("https://aylo.net/api/nowplaying")
+        fetch("/api/nowplaying")
             .then(function (response) {
                 return response.json()
             })

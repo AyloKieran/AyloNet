@@ -5,30 +5,32 @@ let events = []
 let eventsProgress = null
 
 function createSchedule() {
-    panel = document.getElementById("panel")
+    if (overlayData.components.calendar.shown == "true") {
+        panel = document.getElementById("panel")
 
-    schedule = document.createElement("div")
+        schedule = document.createElement("div")
 
-    if (scheduleData.length >= 1) {
-        schedule.setAttribute("id", "schedule")
-    } else {
-        schedule.setAttribute("id", "schedulehidden")
+        if (scheduleData.length >= 1) {
+            schedule.setAttribute("id", "schedule")
+        } else {
+            schedule.setAttribute("id", "schedulehidden")
+        }
+
+        sctitle = document.createElement("h4")
+        sctitle.setAttribute("id", "scheduletitle")
+        sctitle.innerText = "Schedule"
+
+        schedulebox = document.createElement("div")
+        schedulebox.setAttribute("id", "schedulebox")
+
+        schedule.appendChild(sctitle)
+        schedule.appendChild(schedulebox)
+
+
+        panel.appendChild(schedule)
+
+        initSchedule()
     }
-
-    sctitle = document.createElement("h4")
-    sctitle.setAttribute("id", "scheduletitle")
-    sctitle.innerText = "Schedule"
-
-    schedulebox = document.createElement("div")
-    schedulebox.setAttribute("id", "schedulebox")
-
-    schedule.appendChild(sctitle)
-    schedule.appendChild(schedulebox)
-
-
-    panel.appendChild(schedule)
-
-    initSchedule()
 }
 
 function showSchedule() {
@@ -61,14 +63,14 @@ function initSchedule() {
 
     eventsProgress = setInterval(function () {
         updateEventProgress()
-    }, 500)
+    }, 100)
 
     updateEvents()
 }
 
 function getEvents() {
     if (schedule) {
-        fetch("https://aylo.net/api/calendar-events")
+        fetch("/api/calendar-events")
             .then(function (response) {
                 return response.json()
             })

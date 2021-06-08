@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\CalendarController;
 use App\Http\Controllers\Api\NowPlayingController;
+use App\Http\Controllers\Api\OverlayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('calendar-events', [CalendarController::class, 'serve']);
 Route::get('nowplaying', [NowPlayingController::class, 'serve']);
+Route::get('overlay', [OverlayController::class, 'serve']);
