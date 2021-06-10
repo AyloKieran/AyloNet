@@ -43,6 +43,8 @@ class RedirectionController extends Controller
         ]);
         $attributes['user_id'] = request()->user()->id;
 
+        $attributes['route'] = ltrim($attributes['route'], '/');
+
         $redirection = Redirections::create($attributes);
 
         $redirectionStatistic = RedirectionStatistics::firstOrNew(['id' => $redirection->id]);

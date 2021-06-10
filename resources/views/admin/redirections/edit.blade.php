@@ -12,6 +12,10 @@
     <div class="max-w-xl mx-auto sm:px-6 lg:px-8 pt-2">
         <div class="overflow-hidden shadow-md sm:rounded-lg">
             <div class="p-6 bg-white text-black">
+                <form id="deletePost" method="post" action="{{ route('admin.redirections.delete', [$redirection]) }}">
+                    @csrf
+                    @METHOD('DELETE')
+                </form>
                 <form method="post" enctype="multipart/form-data" class="flex flex-col gap-4">
                     @csrf
                     @method('PATCH')
@@ -30,9 +34,11 @@
                         @enderror
                     </div>
 
-                    <x-button type="submit" name="submit" class="text-center mx-auto">
-                        {{ __('Update') }}
-                    </x-button>
+                    <div class="flex">
+                        <div class="flex-grow"></div>
+                        <x-button class="bg-red-500 hover:bg-red-600 mr-1" form="deletePost">Delete</x-button>
+                        <x-button class="">Update</x-button>
+                    </div>
 
                 </form>
             </div>
