@@ -3,25 +3,27 @@ let chatData = {}
 let chatShowing = null
 
 function createChat() {
-    panel = document.getElementById("panel")
+    if (overlayData.components.chat.shown == "true") {
+        panel = document.getElementById("panel")
 
-    chat = document.createElement("div")
-    chat.setAttribute("id", "chathidden")
+        chat = document.createElement("div")
+        chat.setAttribute("id", "chathidden")
 
-    ctitle = document.createElement("h4")
-    ctitle.setAttribute("id", "chattitle")
-    ctitle.innerText = "Chat"
+        ctitle = document.createElement("h4")
+        ctitle.setAttribute("id", "chattitle")
+        ctitle.innerText = "Chat"
 
-    chatbox = document.createElement("div")
-    chatbox.setAttribute("id", "chatbox")
-    // chatbox.setAttribute("src", "./chat.html")
+        chatbox = document.createElement("div")
+        chatbox.setAttribute("id", "chatbox")
+        // chatbox.setAttribute("src", "./chat.html")
 
-    chat.appendChild(ctitle)
-    chat.appendChild(chatbox)
+        chat.appendChild(ctitle)
+        chat.appendChild(chatbox)
 
-    panel.appendChild(chat)        
+        panel.appendChild(chat)        
 
-    initChat()
+        initChat()
+    }
 }
 
 function showChat() {

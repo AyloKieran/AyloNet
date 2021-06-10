@@ -11,12 +11,15 @@ function createWelcome(ttitle = "Welcome", tsubtitle = "I'll be streaming soon! 
     welcometitle.setAttribute("id", "welcometitle")
     welcometitle.innerText = ttitle
 
-    welcomesubtitle = document.createElement("h4")
-    welcomesubtitle.setAttribute("id", "welcomesubtitle")
-    welcomesubtitle.innerText = tsubtitle
-
     welcometext.appendChild(welcometitle)
-    welcometext.appendChild(welcomesubtitle)
+
+    if (tsubtitle != "") {
+        welcomesubtitle = document.createElement("h4")
+        welcomesubtitle.setAttribute("id", "welcomesubtitle")
+        welcomesubtitle.innerText = tsubtitle
+        
+        welcometext.appendChild(welcomesubtitle)
+    }   
 
     panel.appendChild(welcometext)
 
@@ -41,11 +44,13 @@ function createEnd(tsubtitle = "See you soon! 👋") {
     endtext = document.createElement("div")
     endtext.setAttribute("id", "endtext")
 
-    endsubtitle = document.createElement("h4")
-    endsubtitle.setAttribute("id", "endsubtitle")
-    endsubtitle.innerText = tsubtitle
+    if (tsubtitle != "") {
+        endsubtitle = document.createElement("h4")
+        endsubtitle.setAttribute("id", "endsubtitle")
+        endsubtitle.innerText = tsubtitle
 
-    endtext.appendChild(endsubtitle)
+        endtext.appendChild(endsubtitle)
+    }   
 
     panel.appendChild(endtext)
 

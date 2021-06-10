@@ -4,10 +4,15 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\RedirectionController;
 use App\Http\Controllers\Admin\PostsController;
+use App\Http\Controllers\Admin\OverlayController;
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/overlay', [OverlayController::class, 'index'])->name('overlay');
 
 Route::prefix('admin')->group(function() {
+    Route::get('overlay', [OverlayController::class, 'edit'])->name('admin.overlay');
+    Route::patch('/overlay', [OverlayController::class, 'update']);
+
     Route::get('redirections', [RedirectionController::class, 'index'])->name('admin.redirections');
     Route::prefix('redirections')->group(function() {
         Route::get('create', [RedirectionController::class, 'create'])->name('admin.redirections.create');
