@@ -17,7 +17,7 @@
         <meta name="msapplication-config" content="/pwaAssets/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
 
-        <title>{{ $title ?? '' }} - {{ config('app.name', 'Laravel') }}</title>
+        <title>{{ $title ?? '' }} - {{ config('app.name', 'ayloNet') }}</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link href="{{ asset('css/fa.css') }}" rel=" stylesheet">
 
-        <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+        <link rel="icon" type="image/png" href="{{ asset('pwaAssets/favicon-32x32.png') }}">
 
         {{ $head ?? '' }}
 
