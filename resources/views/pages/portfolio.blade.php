@@ -18,7 +18,7 @@
                         <h2 class="text-lg text-gray-300 h-6 mr-1 mb-8 lg:mb-4" id="typed"></h2>
                     </div>
                 </div>
-                <img src="static/portfolio/separator1.webp" class="w-100"></img>
+                <img src="static/portfolio/separator1.svg" class="w-100"></img>
                 <div class="flex-grow"></div> 
             </div>
         </div>
@@ -64,7 +64,7 @@
             </div>
         </div>
         <div class="mt-6 text-white" style="background-image: url('static/portfolio/bg3.webp'); background-repeat: no-repeat; background-size: cover;">
-            <img src="static/portfolio/separator2.webp" class="w-100"></img>
+            <img src="static/portfolio/separator2.svg" class="w-100"></img>
             <h2 class="text-2xl font-semibold mt-8 md:mt-8 lg:mt-0 mb-6">Education & Experience</h2>
             <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row">
                 <div class="flex-1 flex-grow text-center sm:text-right md:text-center lg:text-right mx-2">
@@ -102,7 +102,7 @@
             <div class="mt-8 mb-12 lg:mb-0">
                 <a href="{{ route('contact') }}" class="text-md font-semibold p-1 px-3 rounded-3xl bg-gray-700 text-white hover:shadow-xl hover:text-white hover:bg-gray-900 transition">Contact for more info</a>
             </div>
-            <img src="static/portfolio/separator6.webp" class="w-100"></img>
+            <img src="static/portfolio/separator6.svg" class="w-100"></img>
         </div>
         <div class="pt-6 lg:pt-0 text-white" style="background-color: #0397d6">
             <!-- <h2 class="text-2xl font-semibold">Harmony</h2> -->
@@ -147,7 +147,7 @@
                     </div>
                 </div>
             </div>
-            <img src="static/portfolio/separator3.webp" class="mt-8 w-100"></img>
+            <img src="static/portfolio/separator3.svg" class="mt-8 w-100"></img>
         </div>
         <div class="pt-6 sm:pt-0 pb-12">
             <h2 class="text-2xl font-semibold mb-6">Projects</h2>
@@ -216,7 +216,7 @@
             </div>
         </div>
         <!-- <div class="text-white" style="background-image: url('static/portfolio/bg2.webp'); background-repeat: no-repeat; background-size: cover;">
-            <img src="static/portfolio/separator4.webp" class="w-100"></img>
+            <img src="static/portfolio/separator4.svg" class="w-100"></img>
             <h2 class="text-2xl font-semibold mt-8 sm:mt-0">Contact</h2>
             <p class="text-gray-300">See something you like or want more info?</p>
             <p class="text-gray-300">Give me a shout and I'll get back to you ASAP 😄</p>
@@ -224,7 +224,7 @@
             <div class="mx-4 sm:mx-0">
                 <x-contact-card class="bg-gray-300 text-black"/>
             </div>
-            <img src="static/portfolio/separator1.webp" class="mt-8 w-100"></img>
+            <img src="static/portfolio/separator1.svg" class="mt-8 w-100"></img>
             <span id="contact"></span>
         </div> -->
     </div>
