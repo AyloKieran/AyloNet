@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Api\VersionController;
 use App\Http\Controllers\Api\CalendarController;
 use App\Http\Controllers\Api\NowPlayingController;
 use App\Http\Controllers\Api\OverlayController;
@@ -21,6 +22,8 @@ use App\Http\Controllers\Api\OverlayController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('version', [VersionController::class, 'serve']);
 
 Route::get('calendar-events', [CalendarController::class, 'serve']);
 Route::get('nowplaying', [NowPlayingController::class, 'serve']);
