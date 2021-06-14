@@ -11,14 +11,14 @@
         <div class="pt-16 text-white" style="background-image: url('static/portfolio/bg1.webp'); background-repeat: no-repeat; background-size: cover;">
             <div class="flex flex-col text-center">
                 <div class="flex-grow"></div> 
-                <img src="static/portfolio/kieran.webp" class="rounded-full w-32 mx-auto"></img>
+                <img src="static/portfolio/kieran.webp" class="rounded-full w-32 mx-auto">
                 <div class="flex flex-col ml-0 mt-3 mb-6 sm:mb-0 md:-mb-8">
                     <h1 class="font-bold text-3xl">Hello! I'm Kieran.</h1>
                     <div class="flex flex-row mx-auto">
                         <h2 class="text-lg text-gray-300 h-6 mr-1 mb-8 lg:mb-4" id="typed"></h2>
                     </div>
                 </div>
-                <img src="static/portfolio/separator1.svg" class="w-100"></img>
+                <img src="static/portfolio/separator1.svg" class="w-100">
                 <div class="flex-grow"></div> 
             </div>
         </div>
@@ -64,7 +64,7 @@
             </div>
         </div>
         <div class="mt-6 text-white" style="background-image: url('static/portfolio/bg3.webp'); background-repeat: no-repeat; background-size: cover;">
-            <img src="static/portfolio/separator2.svg" class="w-100"></img>
+            <img src="static/portfolio/separator2.svg" class="w-100">
             <h2 class="text-2xl font-semibold mt-8 md:mt-8 lg:mt-0 mb-6">Education & Experience</h2>
             <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row">
                 <div class="flex-1 flex-grow text-center sm:text-right md:text-center lg:text-right mx-2">
@@ -90,8 +90,8 @@
                     </h4>
                     <p class="text-xs text-gray-300">(Aug 2019 - Jun 2023)</p>
                     <p class="text-sm">BSc (Hons) Computer Science (w/ Placement)</p>
-                    <p class="text-xs">79.5% <span class="text-gray-300">(1st)</span> @ Year 1</p>
-
+                    <p class="text-xs">79.5% <span class="text-gray-300">(1st)</span> in Year 1</p>
+                    <p class="text-xs">81.6% <span class="text-gray-300">(1st)</span> in Year 2</p>
                     <h4 class="mt-3">
                         Pinewood Technologies - <span class="font-semibold">Placement</span>
                     </h4>
@@ -102,16 +102,16 @@
             <div class="mt-8 mb-12 lg:mb-0">
                 <a href="{{ route('contact') }}" class="text-md font-semibold p-1 px-3 rounded-3xl bg-gray-700 text-white hover:shadow-xl hover:text-white hover:bg-gray-900 transition">Contact for more info</a>
             </div>
-            <img src="static/portfolio/separator6.svg" class="w-100"></img>
+            <img src="static/portfolio/separator6.svg" class="w-100">
         </div>
         <div class="pt-6 lg:pt-0 text-white" style="background-color: #0397d6">
             <!-- <h2 class="text-2xl font-semibold">Harmony</h2> -->
-            <img src="static/portfolio/harmony-white.svg" class="mx-auto h-16"></img>
+            <img src="static/portfolio/harmony-white.svg" class="mx-auto h-16">
             <h2 class="text-lg font-semibold text-gray-300 mb-10 -mt-5" style="margin-left: 4.5em;">Ecommerce Music Store</h2>
             <div class="flex flex-col lg:flex-row max-w-6xl px-4 xl:mx-auto text-left">
                 <div class="flex-1">
                     <div class="flex-1 flex-grow flex flex-col">
-                        <img src="static/portfolio/harmony.webp"></img>
+                        <img src="static/portfolio/harmony.webp">
                     </div>
                     <div class="flex-grow"></div>
                 </div>
@@ -147,14 +147,14 @@
                     </div>
                 </div>
             </div>
-            <img src="static/portfolio/separator3.svg" class="mt-8 w-100"></img>
+            <img src="static/portfolio/separator3.svg" class="mt-8 w-100">
         </div>
         <div class="pt-6 sm:pt-0 pb-12">
             <h2 class="text-2xl font-semibold mb-6">Projects</h2>
             <div class="flex flex-col lg:flex-row max-w-6xl px-4 xl:mx-auto text-left">
                 <div class="flex-1">
                     <div class="flex-1 flex-grow flex flex-col mb-2 bg-gray-100 rounded-xl p-2 shadow-md">
-                        <img class="w-100 rounded-xl shadow" src="static/portfolio/PEI.webp"></img>
+                        <img class="w-100 rounded-xl shadow" src="static/portfolio/PEI.webp">
                         <div class="m-2 mb-0">
                             <h3 class="text-xl"><span class="font-semibold">Photography</span> - Experimental Imagery <span class="text-gray-700 text-sm">Jan 2019</span></h3>
                             <p class="text-sm mb-1">An A* Project based on breaking the rules of photography and carving your own path. For this, I also created a video outcome which went above and beyond the brief.</p>
@@ -169,7 +169,7 @@
                 <div class="flex-1 flex-grow flex flex-col">
                     <div class="flex-1 mx-2 flex flex-col mb-2 bg-gray-100 rounded-xl p-2 shadow-md">
                         <div class="flex">
-                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/PPS.webp"></img>
+                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/PPS.webp">
                             <div class="ml-2 flex-col">
                                 <h3 class="text-lg"><span class="font-semibold">Photography</span> - Parts and Sections <span class="text-gray-600 text-xs">Apr 2019</span></h3>
                                 <p class="text-sm mb-1">An A* Project based on breaking the rules of photography and carving your own path. For this, I also created a video outcome which went above and beyond the brief.</p>
@@ -184,7 +184,7 @@
 
                     <div class="flex-1 mx-2 flex flex-col mb-2 bg-gray-100 rounded-xl p-2 shadow-md">
                         <div class="flex">
-                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/ALG.webp"></img>
+                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/ALG.webp">
                             <div class="ml-2 flex flex-col">
                                 <h3 class="text-lg"><span class="font-semibold">ayloNet</span> <span class="text-gray-600 text-xs">2019 - Current</span></h3>
                                 <p class="text-sm mb-1">A collection of servers and services that run my home automation and media management.</p>
@@ -199,7 +199,7 @@
 
                     <div class="flex-1 mx-2 flex flex-col mb-2 bg-gray-100 rounded-xl p-2 shadow-md">
                         <div class="flex">
-                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/GPC.webp"></img>
+                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/GPC.webp">
                             <div class="ml-2 flex flex-col">
                                 <h3 class="text-lg"><span class="font-semibold">Graphic Products</span> Coursework <span class="text-gray-600 text-xs">Jun 2017</span></h3>
                                 <p class="text-sm mb-1">An A* project created for GCSE Graphics Products to a proposal surrounding the design and production of bottles and their packaging.</p>
@@ -216,7 +216,7 @@
             </div>
         </div>
         <!-- <div class="text-white" style="background-image: url('static/portfolio/bg2.webp'); background-repeat: no-repeat; background-size: cover;">
-            <img src="static/portfolio/separator4.svg" class="w-100"></img>
+            <img src="static/portfolio/separator4.svg" class="w-100">
             <h2 class="text-2xl font-semibold mt-8 sm:mt-0">Contact</h2>
             <p class="text-gray-300">See something you like or want more info?</p>
             <p class="text-gray-300">Give me a shout and I'll get back to you ASAP 😄</p>
@@ -224,7 +224,7 @@
             <div class="mx-4 sm:mx-0">
                 <x-contact-card class="bg-gray-300 text-black"/>
             </div>
-            <img src="static/portfolio/separator1.svg" class="mt-8 w-100"></img>
+            <img src="static/portfolio/separator1.svg" class="mt-8 w-100">
             <span id="contact"></span>
         </div> -->
     </div>
