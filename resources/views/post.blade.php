@@ -16,7 +16,9 @@
     <div class="flex flex-col xl:flex-row">
         <div class="flex-grow"></div>
         <x-card class="flex-grow w-100 mb-0 xl:mb-6">
+            <article class="prose w-100 max-w-none">
                 {!! $post->content !!}
+            </article>
         </x-card>
         <div>
             <x-card class="w-96 xl:pl-0">
@@ -39,18 +41,18 @@
                     @endif
                 </div>
             </x-card>
-            {{-- <x-card class="w-96 xl:pl-0">
+            <x-card class="w-96 xl:pl-0">
                 <h2 class="mb-2 text-md font-semibold">Tags</h2>
-                <div class="flex flex-wrap inline-flex mt-2">
-                    <a href="#" class="bg-gray-200 hover:bg-gray-300 hover:shadow transition rounded-full px-3 py-1 mr-2 mb-2">#laravel</a>
+                <div class="flex flex-wrap inline-flex mt-2 justify-center">
                     <a href="#" class="bg-gray-200 hover:bg-gray-300 hover:shadow transition rounded-full px-3 py-1 mr-2 mb-2">#apache</a>
-                    <a href="#" class="bg-gray-200 hover:bg-gray-300 hover:shadow transition rounded-full px-3 py-1 mr-2 mb-2">#contabo</a>
-                    <a href="#" class="bg-gray-200 hover:bg-gray-300 hover:shadow transition rounded-full px-3 py-1 mr-2 mb-2">#php</a>
                     <a href="#" class="bg-gray-200 hover:bg-gray-300 hover:shadow transition rounded-full px-3 py-1 mr-2 mb-2">#development</a>
+                    <a href="#" class="bg-gray-200 hover:bg-gray-300 hover:shadow transition rounded-full px-3 py-1 mr-2 mb-2">#php</a>
+                    <a href="#" class="bg-gray-200 hover:bg-gray-300 hover:shadow transition rounded-full px-3 py-1 mr-2 mb-2">#contabo</a>
+                    <a href="#" class="bg-gray-200 hover:bg-gray-300 hover:shadow transition rounded-full px-3 py-1 mr-2 mb-2">#laravel</a>
                     <a href="#" class="bg-gray-200 hover:bg-gray-300 hover:shadow transition rounded-full px-3 py-1 mr-2 mb-2">#vscode</a>
                 </div>
-            </x-card> --}}
-            {{-- <x-card class="w-96 xl:pl-0">
+            </x-card>
+            <x-card class="w-96 xl:pl-0">
                 <h2 class="mb-2 text-md font-semibold">Recent Posts</h2>
                 @for($i = 0; $i < 3; $i++)
                     <div class="flex flex-col mt-2">
@@ -66,7 +68,7 @@
                         </div>
                     </div>
                 @endfor
-            </x-card> --}}
+            </x-card>
         </div>
         <div class="flex-grow"></div>
     </div>
