@@ -1,3 +1,5 @@
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
 <form method="POST" action="contact" {{$attributes->merge(['class' => 'text-center bg-gray-50 rounded-xl shadow sm:w-min w-full mx-auto p-3'])}}>
     @CSRF
     <div class="flex flex-col mx-auto w-100 sm:w-96">
@@ -43,6 +45,9 @@
             <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
             @enderror
         </div>
+        @error('g-recaptcha-response')
+            <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+        @enderror
     </div>
     <x-button class="mt-4" id="intermediate-button">Submit</x-button>
 
@@ -53,7 +58,7 @@
             <div class="flex-grow"></div>  
             <div class="w-full flex">
                 <div class="flex-grow"></div>
-                <div class="modal-content bg-gray-100 p-6 text-left rounded-xl shadow-xl max-w-lg">
+                <div class="modal-content bg-gray-100 p-6 text-left rounded-xl shadow-xl max-w-md">
                     <div class="flex flex-col justify-between items-center">
                         <div class="flex w-100">
                             <p class="text-2xl font-bold text-gray-800 pb-2">Hold Up!</p>
@@ -66,10 +71,10 @@
                         </div>
                         <div class="text-center">
                             <p>Due to spam on this form, I have to ask people to complete a test to prove they're human.</p>
-                            <p class="text-sm">(I know that'll be super hard for you 😉)</p>
+                            <p class="text-xs text-gray-500">I know that'll be super hard for you 😉</p>
                         </div>
                         <div class="pt-2">
-                            Captcha Content
+                            <div class="g-recaptcha" data-sitekey="{{config('services.recaptcha.key')}}"></div>
                         </div>
                         <div>
                             <x-button class="mt-4">Submit</x-button>
