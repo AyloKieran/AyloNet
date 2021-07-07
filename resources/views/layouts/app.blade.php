@@ -55,7 +55,6 @@
             @include('layouts.navigation')
         </div>
         <div class="bg-truegray-100 flex-grow">
-            <!-- Page Content -->
             <main class="flex-grow text-black md:pl-72 pt-12 md:pt-0">
                 {{ $slot }}
             </main>

@@ -20,6 +20,7 @@ class ContactController extends Controller
             'email' => ['required', 'email'],
             'subject' => ['required', 'min:5'],
             'message' => ['required', 'min:10'],
+            'g-recaptcha-response' => ['required', 'recaptcha'],
         ]);
 
         $name = $request->get('name');

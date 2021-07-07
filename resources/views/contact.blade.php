@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="title">
-        Portfolio
+        Contact
     </x-slot>
 
     <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 pt-8 pb-4 flex items-center">
