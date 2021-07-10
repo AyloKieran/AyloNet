@@ -26,12 +26,12 @@
         </script>
     </x-slot>
 
-    <div class="w-full flex flex-col md:h-screen text-white" style="background: url('static/home/bg.webp')">
+    <div class="w-full flex flex-col flex-grow text-white" style="background: url('static/home/bg.webp')">
         <div class="flex-grow"></div>
         <div class="flex flex-wrap justify-center pt-4 my-6 sm:my-0">
         @foreach($mainlinks as $link)
             <a href="{{ $link['link'] }}" class="bg-gray-700 mx-2 my-2 p-3 rounded-xl shadow hover:bg-gray-400 transition">
-                <img src="static/home/{{ $link['icon'] }}" class="w-24 sm:w-32 sm:h-32 mx-auto"></img>
+                <img src="static/home/{{ $link['icon'] }}" class="w-24 sm:w-32 sm:h-32 mx-auto" />
                 <p class="font-semibold mt-3 text-lg text-center">{{ $link['name'] }}</p>
             </a>
         @endforeach
@@ -39,7 +39,7 @@
         <div class="flex flex-wrap justify-center pt-4 sm:pt-0 pb-4">
         @foreach($otherlinks as $link)
             <a href="{{ $link['link'] }}" class="bg-gray-800 mx-2 my-2 p-3 rounded-xl shadow hover:bg-gray-400 transition">
-                <img src="static/home/{{ $link['icon'] }}" class="w-20 h-20 p-2"></img>
+                <img src="static/home/{{ $link['icon'] }}" class="w-20 h-20 p-2" />
                 <p class="font-semibold mt-3 text-center">{{ $link['name'] }}</p>
             </a>
         @endforeach
