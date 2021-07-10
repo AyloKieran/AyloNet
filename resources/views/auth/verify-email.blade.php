@@ -1,4 +1,8 @@
 <x-guest-layout>
+    <x-slot name="title">
+        Verify Email
+    </x-slot>
+
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">

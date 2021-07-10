@@ -51,13 +51,11 @@
 
     </head>
     <body class="flex flex-col md:flex-row font-sans antialiased text-white min-h-screen">
-        <div>
+        <nav>
             @include('layouts.navigation')
-        </div>
-        <div class="bg-truegray-100 flex-grow">
-            <main class="flex-grow text-black md:pl-72 pt-12 md:pt-0">
-                {{ $slot }}
-            </main>
-        </div>
+        </nav>
+        <main class="flex-grow bg-truegray-100 text-black flex flex-col pt-12 md:pt-0 md:pl-72">
+            {{ $slot }}
+        </main>
     </body>
 </html>
