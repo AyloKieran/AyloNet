@@ -19,33 +19,33 @@
                     content="'{{ $users->first()->name }}' - {{ $users->first()->created_at->diffForHumans(null, false, true) }}"
                     icon="fas fa-user-plus" colour="bg-red-700"
                     route="{{ route('admin.users.edit', $users->first() ) }}" />
-
             </x-admin-dashboard.column>
 
-            <x-admin-dashboard.column>
-                <x-admin-dashboard.column-title>Redirections</x-admin-dashboard.column-title>
-                <x-admin-dashboard.card title="Total Redirections" content="{{ $redirections->count() }}"
-                    icon="fas fa-directions" colour="bg-green-900" route="{{ route('admin.redirections') }}" />
-                <x-admin-dashboard.card title="Total Redirects" content="{{ $redirectionStatistics->sum('usage') }}"
-                    icon="fas fa-redo-alt" colour="bg-green-800" route="{{ route('admin.redirections') }}" />
-                <x-admin-dashboard.card title="Last Redirect"
-                    content="'{{ $redirectionStatistics->first()->redirection()->get()->first()->route }}' - {{ $redirectionStatistics->first()->updated_at->diffForHumans(null, false, true) }}"
-                    icon="fas fa-compass" colour="bg-green-700"
-                    route="{{ route('admin.redirections.edit', $redirectionStatistics->first()->redirection()->get()->first()) }}" />
+            @if ($redirections->count() > 0)
+                <x-admin-dashboard.column>
+                    <x-admin-dashboard.column-title>Redirections</x-admin-dashboard.column-title>
+                    <x-admin-dashboard.card title="Total Redirections" content="{{ $redirections->count() }}"
+                        icon="fas fa-directions" colour="bg-green-900" route="{{ route('admin.redirections') }}" />
+                    <x-admin-dashboard.card title="Total Redirects" content="{{ $redirectionStatistics->sum('usage') }}"
+                        icon="fas fa-redo-alt" colour="bg-green-800" route="{{ route('admin.redirections') }}" />
+                    <x-admin-dashboard.card title="Last Redirect"
+                        content="'{{ $redirectionStatistics->first()->redirection()->get()->first()->route }}' - {{ $redirectionStatistics->first()->updated_at->diffForHumans(null, false, true) }}"
+                        icon="fas fa-compass" colour="bg-green-700"
+                        route="{{ route('admin.redirections.edit', $redirectionStatistics->first()->redirection()->get()->first()) }}" />
+                </x-admin-dashboard.column>
+            @endif
 
-            </x-admin-dashboard.column>
-
-            <x-admin-dashboard.column>
-                <x-admin-dashboard.column-title>Posts</x-admin-dashboard.column-title>
-                <x-admin-dashboard.card title="Total Posts" content="{{ $posts->count() }}"
-                    icon="fas fa-newspaper" colour="bg-blue-900" route="{{ route('admin.posts') }}" />
-                <x-admin-dashboard.card title="Latest Post"
-                    content="'{{ $posts->first()->title }}' - {{ $posts->first()->updated_at->diffForHumans(null, false, true) }} ({{ $posts->first()->creator()->name }})"
-                    icon="fas fa-paper-plane" colour="bg-blue-700"
-                    route="{{ route('admin.posts.edit', $posts->first()) }}" />
-
-            </x-admin-dashboard.column>
-
+            @if ($posts->count() > 0)
+                <x-admin-dashboard.column>
+                    <x-admin-dashboard.column-title>Posts</x-admin-dashboard.column-title>
+                    <x-admin-dashboard.card title="Total Posts" content="{{ $posts->count() }}"
+                        icon="fas fa-newspaper" colour="bg-blue-900" route="{{ route('admin.posts') }}" />
+                    <x-admin-dashboard.card title="Latest Post"
+                        content="'{{ $posts->first()->title }}' - {{ $posts->first()->updated_at->diffForHumans(null, false, true) }} ({{ $posts->first()->creator()->name }})"
+                        icon="fas fa-paper-plane" colour="bg-blue-700"
+                        route="{{ route('admin.posts.edit', $posts->first()) }}" />
+                </x-admin-dashboard.column>
+            @endif
         </div>
 
     </div>
