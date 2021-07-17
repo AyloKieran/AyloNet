@@ -35,7 +35,6 @@ class OverlayController extends Controller
 
         $data = Arr::add($data, 'components', $components);
         $data = Arr::add($data, 'elements', $elements);
-        // $data = Arr::add($data, 'last_updated', Carbon::now()->getPreciseTimestamp(3));
         $data = Arr::add($data, 'last_updated', Cache::get('overlay.last_updated'));
 
         return $data;

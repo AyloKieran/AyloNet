@@ -23,7 +23,7 @@ class RedirectionController extends Controller
             ->where('route', 'like', '%' . $search . '%')
             ->orWhere('url', 'like', '%' . $search . '%')
             ->orderByDesc('redirection_statistics.usage')
-            ->paginate(10)
+            ->paginate(25)
             ->withQueryString();
         
         return view('admin.redirections.index')
