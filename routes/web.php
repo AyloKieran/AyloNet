@@ -4,8 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\PostsTagController;
 
 Route::get('/', function () {return view('index');})->name('home');
+
+Route::get("/posts", [PostsController::class, 'index'])->name('posts');
+Route::get("/posts/tag/{tag}", [PostsTagController::class, 'index'])->name('tagPosts');
+
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'contact']);
 

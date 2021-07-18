@@ -39,6 +39,13 @@
                     <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
                     @enderror
                 </div>
+                <div class="flex flex-col mb-1">
+                    <x-label for="tags" class="font-bold">Tags</x-label>
+                    <x-input id="tags" name="tags" class="{{ $errors->has('tags') ? 'border-red-400' : '' }} px-1" value="{{ $post->tags }}"></x-input>
+                    @error('tags')
+                    <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                    @enderror
+                </div>
                 <div class="flex flex-col">
                     <x-label for="content" class="font-bold">Content</x-label>
                     <textarea id="content" name="content" class="{{ $errors->has('content') ? 'border-red-400' : '' }} px-1">{{ $post->content }}</textarea>

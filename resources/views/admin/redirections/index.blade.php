@@ -15,7 +15,7 @@
             <div class="flex">
                 <div class="mr-2">
                     <form class="bg-white w-full rounded-lg shadow text-sm">
-                        <input class="border-none focus:outline-none" type="search" name="search" placeholder="Search"
+                        <input class="border-none focus:outline-none rounded-lg" type="search" name="search" placeholder="Search"
                             value="{{ request()->get('search') }}">
                         <button type="submit" class="px-3">
                             <i class="fas fa-search" aria-hidden="true"></i>

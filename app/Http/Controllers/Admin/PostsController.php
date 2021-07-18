@@ -29,9 +29,17 @@ class PostsController extends Controller
     //         ->with('redirections', $redirections);
     // }
 
-    public function index()
-    {
-        return Posts::all();
+    public function index() {
+        $search = request()->input('search');
+
+        $posts = Posts::where('title', 'like', '%' . $search . '%')
+            ->orWhere('excerpt', 'like', '%' . $search . '%')
+            ->orWhere('tags', 'like', '%' . $search . '%')
+            ->orderByDesc('created_at')
+            ->paginate(25)
+            ->withQueryString();
+
+        return view('admin.posts.index')->with('posts', $posts);
     }
 
     public function create()
@@ -45,13 +53,14 @@ class PostsController extends Controller
             'title' => ['required', 'min:5'],
             'route' => ['required', 'unique:posts,route'],
             'excerpt' => ['min:10'],
+            'tags' => ['nullable'],
             'content' => ['required'],
         ]);
         $attributes['user_id'] = request()->user()->id;
 
         $post = Posts::create($attributes);
         $post->save();
-        return redirect(route('admin.posts'));
+        return redirect($post->route);
     }
 
     public function edit(Posts $post)
@@ -69,11 +78,12 @@ class PostsController extends Controller
 
         $post->title = request()->get('title');
         $post->excerpt = request()->get('excerpt');
+        $post->tags = request()->get('tags');
         $post->content = request()->get('content');
 
         $post->save();
 
-        return redirect(route('admin.posts'));
+        return redirect($post->route);
     }
 
     public function destroy(Posts $post)
