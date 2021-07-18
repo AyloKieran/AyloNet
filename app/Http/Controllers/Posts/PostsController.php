@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Posts;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Models\Posts;
@@ -15,10 +16,10 @@ class PostsController extends Controller
             ->orWhere('excerpt', 'like', '%' . $search . '%')
             ->orWhere('tags', 'like', '%' . $search . '%')
             ->orderByDesc('created_at')
-            ->paginate(25)
+            ->paginate(12)
             ->withQueryString();
 
-        return view('posts')->with('posts', $posts);
+        return view('posts.posts')->with('posts', $posts);
     }
 
 }

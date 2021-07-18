@@ -19,7 +19,7 @@
         <div class="w-96 xl:w-1/2 mx-auto">
             <x-card class="w-96 xl:pl-0">
                 <div class="w-100">
-                    <div class="flex flex-col mx-auto">
+                    <a class="flex flex-col mx-auto" href="{{ route('authorPosts', $post->creator() )}}">
                         <div class="mx-auto">
                             @if(!$post->creator()->avatar)
                                 <svg class="h-16 w-16 p-1 fill-current text-gray-400 rounded-full bg-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -30,7 +30,7 @@
                             @endif
                         </div>
                         <span class="w-100 text-center text-md text-black font-semibold overflow-hidden">{{ $post->creator()->name }}</span>
-                    </div>
+                    </a>
                     <p class="text-truegray-500 mt-2 text-sm text-center" title="{{ $post->created_at }}">Written {{ $post->created_at->diffForHumans(null, false, true) }}</p>
                     @if($post->created_at != $post->updated_at)
                         <p class="text-truegray-500 text-sm text-center" title="{{ $post->updated_at }}">Updated {{ $post->updated_at->diffForHumans(null, false, true) }}</p>

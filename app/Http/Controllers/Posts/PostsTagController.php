@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Posts;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Models\Posts;
@@ -11,9 +12,9 @@ class PostsTagController extends Controller
     public function index($tag) {
         $posts = Posts::where('tags', 'like', '%' . $tag . '%')
             ->orderByDesc('created_at')
-            ->paginate(25);
+            ->paginate(12);
 
-        return view('postsTag')->with('posts', $posts)->with('tag', $tag);
+        return view('posts.postsTag')->with('posts', $posts)->with('tag', $tag);
     }
 
 }
