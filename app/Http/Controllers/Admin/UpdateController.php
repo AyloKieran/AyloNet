@@ -12,20 +12,13 @@ class UpdateController extends Controller
         $this->middleware('can:admin');
     }
 
-    public function index()
-    {        
-        return view('admin.update.index');
-    }
-
     public function update()
     {
-        $process = new Process(['sh', base_path() . '/update.sh']);
-        $process->run();
-        return view('admin.update.inProgress');
-    }
+        if(env('APP_ENV') == "prod") {
+            $process = new Process(['sh', base_path() . '/update.sh']);
+            $process->run();
+        }
 
-    public function complete()
-    {
-        return view('admin.update.complete');
+        return redirect(route('admin'));
     }
 }

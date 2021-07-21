@@ -49,9 +49,5 @@ Route::prefix('admin')->group(function() {
         });
     });
 
-    Route::get('update', [UpdateController::class, 'index'])->name('admin.update');
-    Route::post('update', [UpdateController::class, 'update'])->name('admin.update.action');
-    Route::prefix('update')->group(function() {
-        Route::post('get', [UpdateController::class, 'complete'])->name('admin.update.complete');
-    });
+    Route::post('update', [UpdateController::class, 'update'])->name('admin.update');
 });

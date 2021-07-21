@@ -51,7 +51,7 @@
                 <x-admin-dashboard.column-title>Deployment</x-admin-dashboard.column-title>
 
                 <a class="flex bg-white rounded-md shadow-md p-3 mb-2 w-100 hover:bg-gray-50 group transition"
-                    href="{{ route('admin.update') }}">
+                    href="/github">
                     <div
                         class="bg-yellow-700 bg-opacity-75 group-hover:bg-opacity-90 rounded-full w-12 h-12 mr-2 flex text-white transition">
                         <div class="flex-grow"></div>
@@ -66,7 +66,7 @@
                         <div id="updateAvailable"
                             class="bg-green-700 bg-opacity-50 group hover:bg-opacity-90 rounded-full w-8 h-8 ml-2 my-auto flex text-white transition shadow-lg hover:shadow-xl hidden">
                             <div class="flex-grow"></div>
-                            <form class="w-8 h-8 text-center align-middle my-auto" method="POST" action="{{ route('admin.update.action') }}">
+                            <form class="w-8 h-8 text-center align-middle my-auto" method="POST" action="{{ route('admin.update') }}">
                                 @csrf
                                 <button class="h-8">
                                     <i class="fas fa-cloud-upload-alt fa-sm w-8"></i>
