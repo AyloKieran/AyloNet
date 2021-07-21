@@ -63,13 +63,13 @@
                             <h4 class="text-lg font-semibold text-gray-700">Version</h4>
                             <div class="text-gray-500 text-sm" title="{{ $version }}">{{ $version }}</div>
                         </div>
-                        <div id="updateAvailable"
-                            class="bg-green-700 bg-opacity-50 group hover:bg-opacity-90 rounded-full w-8 h-8 ml-2 my-auto flex text-white transition shadow-lg hover:shadow-xl hidden">
+                        <div id="updateArea"
+                            class="bg-yellow-900 bg-opacity-50 group hover:bg-opacity-90 rounded-full w-8 h-8 ml-2 my-auto flex text-white transition animate-spin">
                             <div class="flex-grow"></div>
                             <form class="w-8 h-8 text-center align-middle my-auto" method="POST" action="{{ route('admin.update') }}">
                                 @csrf
                                 <button class="h-8">
-                                    <i class="fas fa-cloud-upload-alt fa-sm w-8"></i>
+                                    <i id="updateIcon" class="fas fa-spinner fa-sm w-8"></i>
                                 </button>
                             </form>
                             <div class="flex-grow"></div>
@@ -101,12 +101,28 @@
                     return response.json();
                 })
                 .then(function (data) {
-                    update = data["updateAvailable"];
+                    var update = data["updateAvailable"];
+
+                    var updateArea = document.getElementById("updateArea"); 
+                    var updateIcon = document.getElementById("updateIcon"); 
 
                     if(update) {
-                        document.getElementById("updateAvailable").classList.toggle("hidden");
+                        updateArea.classList.toggle("animate-spin");
+                        updateArea.classList.toggle("bg-yellow-900");
+                        updateArea.classList.toggle("bg-green-700");
+                        updateIcon.classList.toggle("fa-spinner");
+                        updateIcon.classList.toggle("fa-cloud-upload-alt");
+                    } else {
+                        updateArea.classList.toggle("hidden");
                     }
                 })
+                .catch(function () {
+                    updateArea.classList.toggle("animate-spin");
+                    updateArea.classList.toggle("bg-yellow-900");
+                    updateArea.classList.toggle("bg-red-900");
+                    updateIcon.classList.toggle("fa-spinner");
+                    updateIcon.classList.toggle("fa-exclamation");
+                });
         })();
     </script>
 </x-app-layout>
