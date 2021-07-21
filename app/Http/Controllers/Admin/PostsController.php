@@ -13,22 +13,6 @@ class PostsController extends Controller
         $this->middleware('can:admin');
     }
 
-    // public function index()
-    // {
-    //     $search = request()->input('search');
-
-    //     $redirections = Redirections::select('redirections.*')
-    //         ->join('redirection_statistics', 'redirections.id', '=', 'redirection_statistics.id')
-    //         ->where('route', 'like', '%' . $search . '%')
-    //         ->orWhere('url', 'like', '%' . $search . '%')
-    //         ->orderByDesc('redirection_statistics.usage')
-    //         ->paginate(10)
-    //         ->withQueryString();
-        
-    //     return view('admin.redirections.index')
-    //         ->with('redirections', $redirections);
-    // }
-
     public function index() {
         $search = request()->input('search');
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\RedirectionController;
 use App\Http\Controllers\Admin\PostsController;
 use App\Http\Controllers\Admin\OverlayController;
+use App\Http\Controllers\Admin\UpdateController;
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/overlay', [OverlayController::class, 'index'])->name('overlay');
@@ -46,5 +47,11 @@ Route::prefix('admin')->group(function() {
                 Route::patch('role', [AdminUserController::class, 'updateRole'])->name('admin.users.update.role');
             });
         });
+    });
+
+    Route::get('update', [UpdateController::class, 'index'])->name('admin.update');
+    Route::post('update', [UpdateController::class, 'update'])->name('admin.update.action');
+    Route::prefix('update')->group(function() {
+        Route::post('get', [UpdateController::class, 'complete'])->name('admin.update.complete');
     });
 });

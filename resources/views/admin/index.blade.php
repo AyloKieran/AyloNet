@@ -22,31 +22,91 @@
             </x-admin-dashboard.column>
 
             @if ($redirections->count() > 0)
-                <x-admin-dashboard.column>
-                    <x-admin-dashboard.column-title>Redirections</x-admin-dashboard.column-title>
-                    <x-admin-dashboard.card title="Total Redirections" content="{{ $redirections->count() }}"
-                        icon="fas fa-directions" colour="bg-green-900" route="{{ route('admin.redirections') }}" />
-                    <x-admin-dashboard.card title="Total Redirects" content="{{ $redirectionStatistics->sum('usage') }}"
-                        icon="fas fa-redo-alt" colour="bg-green-800" route="{{ route('admin.redirections') }}" />
-                    <x-admin-dashboard.card title="Last Redirect"
-                        content="'{{ $redirectionStatistics->first()->redirection()->get()->first()->route }}' - {{ $redirectionStatistics->first()->updated_at->diffForHumans(null, false, true) }}"
-                        icon="fas fa-compass" colour="bg-green-700"
-                        route="{{ route('admin.redirections.edit', $redirectionStatistics->first()->redirection()->get()->first()) }}" />
-                </x-admin-dashboard.column>
+            <x-admin-dashboard.column>
+                <x-admin-dashboard.column-title>Redirections</x-admin-dashboard.column-title>
+                <x-admin-dashboard.card title="Total Redirections" content="{{ $redirections->count() }}"
+                    icon="fas fa-directions" colour="bg-green-900" route="{{ route('admin.redirections') }}" />
+                <x-admin-dashboard.card title="Total Redirects" content="{{ $redirectionStatistics->sum('usage') }}"
+                    icon="fas fa-redo-alt" colour="bg-green-800" route="{{ route('admin.redirections') }}" />
+                <x-admin-dashboard.card title="Last Redirect"
+                    content="'{{ $redirectionStatistics->first()->redirection()->get()->first()->route }}' - {{ $redirectionStatistics->first()->updated_at->diffForHumans(null, false, true) }}"
+                    icon="fas fa-compass" colour="bg-green-700"
+                    route="{{ route('admin.redirections.edit', $redirectionStatistics->first()->redirection()->get()->first()) }}" />
+            </x-admin-dashboard.column>
             @endif
 
             @if ($posts->count() > 0)
-                <x-admin-dashboard.column>
-                    <x-admin-dashboard.column-title>Posts</x-admin-dashboard.column-title>
-                    <x-admin-dashboard.card title="Total Posts" content="{{ $posts->count() }}"
-                        icon="fas fa-newspaper" colour="bg-blue-900" route="{{ route('admin.posts') }}" />
-                    <x-admin-dashboard.card title="Latest Post"
-                        content="'{{ $posts->first()->title }}' - {{ $posts->first()->updated_at->diffForHumans(null, false, true) }} ({{ $posts->first()->creator()->name }})"
-                        icon="fas fa-paper-plane" colour="bg-blue-700"
-                        route="{{ route('admin.posts.edit', $posts->first()) }}" />
-                </x-admin-dashboard.column>
+            <x-admin-dashboard.column>
+                <x-admin-dashboard.column-title>Posts</x-admin-dashboard.column-title>
+                <x-admin-dashboard.card title="Total Posts" content="{{ $posts->count() }}" icon="fas fa-newspaper"
+                    colour="bg-blue-900" route="{{ route('admin.posts') }}" />
+                <x-admin-dashboard.card title="Latest Post"
+                    content="'{{ $posts->first()->title }}' - {{ $posts->first()->updated_at->diffForHumans(null, false, true) }} ({{ $posts->first()->creator()->name }})"
+                    icon="fas fa-paper-plane" colour="bg-blue-700"
+                    route="{{ route('admin.posts.edit', $posts->first()) }}" />
+            </x-admin-dashboard.column>
             @endif
+
+            <x-admin-dashboard.column>
+                <x-admin-dashboard.column-title>Deployment</x-admin-dashboard.column-title>
+
+                <a class="flex bg-white rounded-md shadow-md p-3 mb-2 w-100 hover:bg-gray-50 group transition"
+                    href="{{ route('admin.update') }}">
+                    <div
+                        class="bg-yellow-700 bg-opacity-75 group-hover:bg-opacity-90 rounded-full w-12 h-12 mr-2 flex text-white transition">
+                        <div class="flex-grow"></div>
+                        <i class="fas fa-code-branch fa-lg w-12 text-center align-middle my-auto"></i>
+                        <div class="flex-grow"></div>
+                    </div>
+                    <div class="flex flex-grow">
+                        <div class="flex flex-col flex-grow">
+                            <h4 class="text-lg font-semibold text-gray-700">Version</h4>
+                            <div class="text-gray-500 text-sm" title="{{ $version }}">{{ $version }}</div>
+                        </div>
+                        <div id="updateAvailable"
+                            class="bg-green-700 bg-opacity-50 group hover:bg-opacity-90 rounded-full w-8 h-8 ml-2 my-auto flex text-white transition shadow-lg hover:shadow-xl hidden">
+                            <div class="flex-grow"></div>
+                            <form class="w-8 h-8 text-center align-middle my-auto" method="POST" action="{{ route('admin.update.action') }}">
+                                @csrf
+                                <button class="h-8">
+                                    <i class="fas fa-cloud-upload-alt fa-sm w-8"></i>
+                                </button>
+                            </form>
+                            <div class="flex-grow"></div>
+                        </div>
+                    </div>
+                </a>
+
+                @php
+                if (env('APP_ENV') == 'prod') {
+                $env = "Production";
+                } else {
+                $env = "Development";
+                }
+
+                @endphp
+                <x-admin-dashboard.card title="Environment" content="{{ $env }}" icon="fas fa-file-code"
+                    colour="bg-yellow-600" route="/github" />
+
+
+            </x-admin-dashboard.column>
         </div>
 
     </div>
+
+    <script>
+        (function () {
+            fetch("/api/version")
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    update = data["updateAvailable"];
+
+                    if(update) {
+                        document.getElementById("updateAvailable").classList.toggle("hidden");
+                    }
+                })
+        })();
+    </script>
 </x-app-layout>
