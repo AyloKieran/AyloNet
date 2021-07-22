@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Symfony\Component\Process\Process;
+use Illuminate\Support\Facades\Artisan;
 
 class UpdateController extends Controller
 {
@@ -17,8 +18,8 @@ class UpdateController extends Controller
         if(env('APP_ENV') == "prod") {
             $process = new Process(['sh', base_path() . '/update.sh']);
             $process->run();
-            \Artisan::call('view:clear');
         }
+        Artisan::call('view:clear');
 
         return redirect(route('admin'));
     }
