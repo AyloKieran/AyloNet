@@ -16,10 +16,10 @@ class ContactController extends Controller
 
     public function contact(Request $request) {
         $attributes = request()->validate([
-            'name' => ['required', 'min:3'],
+            'name' => ['required'],
             'email' => ['required', 'email'],
-            'subject' => ['required', 'min:5'],
-            'message' => ['required', 'min:10'],
+            'subject' => ['required'],
+            'message' => ['required'],
             'g-recaptcha-response' => ['required', 'recaptcha'],
         ]);
 

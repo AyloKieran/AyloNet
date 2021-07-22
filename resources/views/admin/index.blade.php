@@ -9,70 +9,120 @@
         </div>
     </div>
 
-    <x-card>
-        <div class="flex">
-            <h1 class="text-xl font-semibold">Redirections</h1>
-            <div class="flex-grow"></div>
-            <a href="{{ route('admin.redirections')}}" class="text-right">
-                <x-button>
-                    Show More
-                </x-button>
-            </a>
-        </div>
-        <div class="text-truegray-600">
-            <table class="w-100 mt-4 flex flex-col">
-                <tr class="flex text-left w-full">
-                    <th class="w-3/12">Route</th>
-                    <th class="w-100">URL</th>
-                    <th class="w-4/12 text-center lg:text-left">Updated By</th>
-                    <th class="text-center w-2/12">Uses</th>
-                </tr>
-                @forelse ($redirections as $redirection)
-                <tr class="break-all flex">
-                <td class="w-3/12 my-auto"><a href="{{ route('home') . '/' .  $redirection->route }}">{{ Str::limit($redirection->route, 10) }}</a></td>
-                    <td class="w-100 my-auto overflow-hidden"><a href="{{ $redirection->url }}">{{ Str::limit($redirection->url, 50) }}</a></td>
-                    <td class="flex flex-col lg:flex-row w-4/12 my-auto text-center">
-                        <div class="mr-0 lg:mr-2 flex">
-                            <div class="flex-grow lg:flex-grow-0"></div>
-                            @if(!$redirection->creator()->avatar)
-                                <svg class="h-10 w-10 p-1 fill-current text-gray-400 rounded-full bg-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                </svg>
-                            @else
-                                <img class="h-10 w-10 rounded-full" src="{{ $redirection->creator()->avatar }}" alt="{{ $redirection->creator()->name }}'s Avatar" title="{{ $redirection->creator()->name }}"></img>
-                            @endif
-                            <div class="flex-grow lg:flex-grow-0"></div>
-                        </div>
-                        <p class="my-auto" title="{{ $redirection->updated_at }}">{{ $redirection->updated_at->diffForHumans(null, false, true) }}</p>
-                    </td>
-                    <td class="text-center w-2/12 my-auto">{{ $redirection->statistics()->first()->usage }}</td>
-                </tr>
-                @empty
-                <tr>
-                    <td>There are no redirections to show.
-                    <td>
-                </tr>
-                @endforelse
-            </table>
-        </div>
-    </x-card>
+    <div class="max-w-6xl w-100 mx-auto flex items-center">
+        <div class="w-100 flex flex-col flex-wrap xl:flex-row">
+            <x-admin-dashboard.column>
+                <x-admin-dashboard.column-title>Users</x-admin-dashboard.column-title>
+                <x-admin-dashboard.card title="Total Users" content="{{ $users->count() }}" icon="fas fa-user-friends"
+                    colour="bg-red-800" route="{{ route('admin.users') }}" />
+                <x-admin-dashboard.card title="Last Sign Up"
+                    content="'{{ $users->first()->name }}' - {{ $users->first()->created_at->diffForHumans(null, false, true) }}"
+                    icon="fas fa-user-plus" colour="bg-red-700"
+                    route="{{ route('admin.users.edit', $users->first() ) }}" />
+            </x-admin-dashboard.column>
 
-    <x-card>
-        <div class="flex">
-            <h1 class="text-xl font-semibold">Users</h1>
-            <div class="flex-grow"></div>
-            <a href="{{ route('admin.users')}}" class="text-right">
-                <x-button>
-                    Show More
-                </x-button>
-            </a>
+            @if ($redirections->count() > 0)
+            <x-admin-dashboard.column>
+                <x-admin-dashboard.column-title>Redirections</x-admin-dashboard.column-title>
+                <x-admin-dashboard.card title="Total Redirections" content="{{ $redirections->count() }}"
+                    icon="fas fa-directions" colour="bg-green-900" route="{{ route('admin.redirections') }}" />
+                <x-admin-dashboard.card title="Total Redirects" content="{{ $redirectionStatistics->sum('usage') }}"
+                    icon="fas fa-redo-alt" colour="bg-green-800" route="{{ route('admin.redirections') }}" />
+                <x-admin-dashboard.card title="Last Redirect"
+                    content="'{{ $redirectionStatistics->first()->redirection()->get()->first()->route }}' - {{ $redirectionStatistics->first()->updated_at->diffForHumans(null, false, true) }}"
+                    icon="fas fa-compass" colour="bg-green-700"
+                    route="{{ route('admin.redirections.edit', $redirectionStatistics->first()->redirection()->get()->first()) }}" />
+            </x-admin-dashboard.column>
+            @endif
+
+            @if ($posts->count() > 0)
+            <x-admin-dashboard.column>
+                <x-admin-dashboard.column-title>Posts</x-admin-dashboard.column-title>
+                <x-admin-dashboard.card title="Total Posts" content="{{ $posts->count() }}" icon="fas fa-newspaper"
+                    colour="bg-blue-900" route="{{ route('admin.posts') }}" />
+                <x-admin-dashboard.card title="Latest Post"
+                    content="'{{ $posts->first()->title }}' - {{ $posts->first()->updated_at->diffForHumans(null, false, true) }} ({{ $posts->first()->creator()->name }})"
+                    icon="fas fa-paper-plane" colour="bg-blue-700"
+                    route="{{ route('admin.posts.edit', $posts->first()) }}" />
+            </x-admin-dashboard.column>
+            @endif
+
+            <x-admin-dashboard.column>
+                <x-admin-dashboard.column-title>Deployment</x-admin-dashboard.column-title>
+
+                <a class="flex bg-white rounded-md shadow-md p-3 mb-2 w-100 hover:bg-gray-50 group transition"
+                    href="/github">
+                    <div
+                        class="bg-yellow-700 bg-opacity-75 group-hover:bg-opacity-90 rounded-full w-12 h-12 mr-2 flex text-white transition">
+                        <div class="flex-grow"></div>
+                        <i class="fas fa-code-branch fa-lg w-12 text-center align-middle my-auto"></i>
+                        <div class="flex-grow"></div>
+                    </div>
+                    <div class="flex flex-grow">
+                        <div class="flex flex-col flex-grow">
+                            <h4 class="text-lg font-semibold text-gray-700">Version</h4>
+                            <div class="text-gray-500 text-sm" title="{{ $version }}">{{ $version }}</div>
+                        </div>
+                        <div id="updateArea"
+                            class="bg-yellow-900 bg-opacity-50 group hover:bg-opacity-90 rounded-full w-8 h-8 ml-2 my-auto flex text-white transition animate-spin">
+                            <div class="flex-grow"></div>
+                            <form class="w-8 h-8 text-center align-middle my-auto" method="POST" action="{{ route('admin.update') }}">
+                                @csrf
+                                <button class="h-8">
+                                    <i id="updateIcon" class="fas fa-spinner fa-sm w-8"></i>
+                                </button>
+                            </form>
+                            <div class="flex-grow"></div>
+                        </div>
+                    </div>
+                </a>
+
+                @php
+                if (env('APP_ENV') == 'prod') {
+                $env = "Production";
+                } else {
+                $env = "Development";
+                }
+
+                @endphp
+                <x-admin-dashboard.card title="Environment" content="{{ $env }}" icon="fas fa-file-code"
+                    colour="bg-yellow-600" route="/github" />
+
+
+            </x-admin-dashboard.column>
         </div>
-        <div class="flex flex-wrap my-4">
-            @foreach($users as $user)
-            <x-user-card :user="$user" :edit="true" class="w-96 mx-auto my-1"></x-user-card>
-            @endforeach
-        </div>
-    </x-card>
 
     </div>
+
+    <script>
+        (function () {
+            fetch("/api/version")
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    var update = data["updateAvailable"];
+
+                    var updateArea = document.getElementById("updateArea"); 
+                    var updateIcon = document.getElementById("updateIcon"); 
+
+                    if(update) {
+                        updateArea.classList.toggle("animate-spin");
+                        updateArea.classList.toggle("bg-yellow-900");
+                        updateArea.classList.toggle("bg-green-700");
+                        updateIcon.classList.toggle("fa-spinner");
+                        updateIcon.classList.toggle("fa-cloud-upload-alt");
+                    } else {
+                        updateArea.classList.toggle("hidden");
+                    }
+                })
+                .catch(function () {
+                    updateArea.classList.toggle("animate-spin");
+                    updateArea.classList.toggle("bg-yellow-900");
+                    updateArea.classList.toggle("bg-red-900");
+                    updateIcon.classList.toggle("fa-spinner");
+                    updateIcon.classList.toggle("fa-exclamation");
+                });
+        })();
+    </script>
 </x-app-layout>

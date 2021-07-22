@@ -11,4 +11,9 @@ class RedirectionStatistics extends Model
     use HasFactory, Uuids;
 
     protected $guarded = [];
+
+    public function redirection()
+    {
+        return $this->hasOne(Redirections::class, 'id');
+    }
 }

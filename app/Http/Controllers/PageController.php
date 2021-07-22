@@ -22,7 +22,8 @@ class PageController extends Controller
 
         $post = Posts::where('route', $path)->first();
         if($post) {
-            return view('post')->with('post', $post);
+            $posts = Posts::orderByDesc('created_at')->get()->take(3);
+            return view('post')->with('post', $post)->with('posts', $posts);
         }
 
         $page = base_path() . "/resources/views/pages/{$path}.blade.php";

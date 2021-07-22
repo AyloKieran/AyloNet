@@ -13,7 +13,8 @@
         "laravel/socialite": "^5.2",
         "laravel/tinker": "^2.5",
         "spatie/laravel-google-calendar": "^3.3",
-        "spatie/last-fm-now-playing": "^1.1"
+        "spatie/last-fm-now-playing": "^1.1",
+        "symfony/process": "^5.3"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
