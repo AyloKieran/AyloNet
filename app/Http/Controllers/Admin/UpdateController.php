@@ -17,7 +17,7 @@ class UpdateController extends Controller
         if(env('APP_ENV') == "prod") {
             $process = new Process(['sh', base_path() . '/update.sh']);
             $process->run();
-            Artisan::call('view:clear');
+            \Artisan::call('view:clear');
         }
 
         return redirect(route('admin'));
