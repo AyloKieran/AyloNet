@@ -7,7 +7,5 @@ composer install -n --optimize-autoloader --no-dev
 php artisan migrate
 npm run prod
 
-php artisan cache:clear
-php artisan view:clear
 php artisan config:clear
 php artisan route:clear
