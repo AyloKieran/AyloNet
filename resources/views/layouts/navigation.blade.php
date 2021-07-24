@@ -6,10 +6,13 @@
             </a>
         </div>
         <div class="flex-grow"></div>
-        <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
+        <button @click="open = ! open"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
     </div>
@@ -27,6 +30,9 @@
             <x-responsive-nav-link :href="'/portfolio'" :active="request()->path() == 'portfolio'">
                 Portfolio
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="'/posts'" :active="request()->path() == 'posts'">
+                Posts
+            </x-responsive-nav-link>
             <x-responsive-nav-link :href="'/github'">
                 Github
             </x-responsive-nav-link>
@@ -36,15 +42,17 @@
         </div>
 
         <div class="pt-4 pb-1 border-t border-gray-200">
-        @auth
+            @auth
             <a href="{{ route('user') }}" class="flex items-center px-4 hover:bg-gray-600 transition">
                 <div class="flex-shrink-0">
                     @if(!auth()->user()->avatar)
-                        <svg class="h-10 w-10 fill-current text-gray-500 font-semibold" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                        </svg>
+                    <svg class="h-10 w-10 fill-current text-gray-500 font-semibold" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
                     @else
-                        <img class="h-10 w-10 rounded-full object-cover" src="{{ auth()->user()->avatar }}"></img>
+                    <img class="h-10 w-10 rounded-full object-cover" src="{{ auth()->user()->avatar }}"></img>
                     @endif
                 </div>
 
@@ -56,28 +64,27 @@
 
             <div class="mt-3 space-y-1">
                 @can('admin')
-                    <x-responsive-nav-link :href="'/admin'">
-                        {{ __('Admin') }}
-                    </x-responsive-nav-link>
+                <x-responsive-nav-link :href="'/admin'">
+                    {{ __('Admin') }}
+                </x-responsive-nav-link>
                 @endcan
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
+                    <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Log out') }}
                     </x-responsive-nav-link>
                 </form>
             </div>
             @else
-                <div class="flex">
+            <div class="flex">
                 <x-responsive-nav-link :href="route('login')" class="flex-grow text-center">
-                        {{ __('Log in') }}
+                    {{ __('Log in') }}
                 </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('register')" class="flex-grow text-center">
-                        {{ __('Register') }}
+                    {{ __('Register') }}
                 </x-responsive-nav-link>
-                </div>
+            </div>
             @endauth
         </div>
     </div>
@@ -102,6 +109,9 @@
         <x-nav-link :href="'/portfolio'" :active="request()->path() == 'portfolio'">
             Portfolio
         </x-nav-link>
+        <x-nav-link :href="'/posts'" :active="request()->path() == 'posts'">
+            Posts
+        </x-nav-link>
         <x-nav-link :href="'/github'">
             Github
         </x-nav-link>
@@ -113,40 +123,44 @@
 
     <div class="bg-gray-900 flex flex-row p-2">
         @auth
-            <a href="{{ route('user') }}" class="flex flex-row">
+        <a href="{{ route('user') }}" class="flex flex-row">
             <div class="w-10">
-            @if(!auth()->user()->avatar)
-                <svg class="h-10 w-10 p-1 fill-current text-gray-400 rounded-full bg-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                @if(!auth()->user()->avatar)
+                <svg class="h-10 w-10 p-1 fill-current text-gray-400 rounded-full bg-gray-800"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
-            @else
+                @else
                 <img class="h-10 w-10 rounded-full object-cover" src="{{ auth()->user()->avatar }}"></img>
-            @endif
+                @endif
             </div>
 
             <div class="mx-2 my-auto h-6 flex flex-col justify-center items-center">
-                <span class="text-md text-truegray-300 overflow-hidden hover:text-white transition" title="{{ Auth::user()->email }} ({{ Auth::user()->provider }})">{{ Auth::user()->name }}</span>
+                <span class="text-md text-truegray-300 overflow-hidden hover:text-white transition"
+                    title="{{ Auth::user()->email }} ({{ Auth::user()->provider }})">{{ Auth::user()->name }}</span>
             </div>
+        </a>
+        <div class="flex-grow"></div>
+        @can('admin')
+        <div class="h-auto flex flex-col justify-center items-center text-truegray-400 hover:text-white transition">
+            <a href="{{ route('admin') }}" title="Admin Panel">
+                <i class="fas fa-sliders-h"></i>
             </a>
-            <div class="flex-grow"></div>
-            @can('admin')
-            <div class="h-auto flex flex-col justify-center items-center text-truegray-400 hover:text-white transition">
-                <a href="{{ route('admin') }}" title="Admin Panel">
-                    <i class="fas fa-sliders-h"></i>
-                </a>
-            </div>
-            @endcan
-            <div class="h-auto flex flex-col justify-center items-center text-truegray-400 hover:text-white transition ml-4 mr-1">
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button title="Log out">
-                    <i class="fas fa-sign-out-alt"></i>
-                    </button>
-                </form>
-            </div>
-        @else
-            <x-nav-auth></x-nav-auth>
-        @endauth
         </div>
-        
+        @endcan
+        <div
+            class="h-auto flex flex-col justify-center items-center text-truegray-400 hover:text-white transition ml-4 mr-1">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button title="Log out">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </form>
+        </div>
+        @else
+        <x-nav-auth></x-nav-auth>
+        @endauth
+    </div>
+
 </nav>

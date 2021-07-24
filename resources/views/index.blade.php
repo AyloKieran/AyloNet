@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-app-layout>
     <x-slot name="title">
         Home
     </x-slot>
