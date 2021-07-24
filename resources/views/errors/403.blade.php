@@ -19,4 +19,13 @@
         </div>
         <div class="flex-grow"></div>
     </div>
+
+    @auth
+        @else
+        {{ session()->put('loginUrl', Request::getRequestUri()) }}
+
+        <script>
+            window.location.href = "{{ route('login') }}";
+        </script>
+    @endauth
 </x-app-layout>
