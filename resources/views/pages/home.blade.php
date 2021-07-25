@@ -5,18 +5,19 @@
 
     @php
         $mainlinks = collect([
-            ['name' => 'HASS', 'icon' => "homeassistant.png", 'link' => 'https://hass.home.aylo.net'], 
-            ['name' => 'Plex', 'icon' => "plex.png", 'link' => 'https://plex.home.aylo.net'], 
-            ['name' => 'Ombi', 'icon' => "ombi.png", 'link' => 'https://ombi.home.aylo.net'], 
+            ['name' => 'HASS', 'icon' => "homeassistant.png", 'link' => 'https://hass.dy4.aylo.net'], 
+            ['name' => 'Plex', 'icon' => "plex.png", 'link' => 'https://plex.dy4.aylo.net'], 
+            ['name' => 'Ombi', 'icon' => "ombi.png", 'link' => 'https://ombi.dy4.aylo.net'], 
         ]);
         $otherlinks = collect([
-            ['name' => 'Tautulli', 'icon' => "tautulli.png", 'link' => 'https://tautulli.home.aylo.net'], 
-            ['name' => 'Sonarr', 'icon' => "sonarr.png", 'link' => 'https://sonarr.home.aylo.net'], 
-            ['name' => 'Radarr', 'icon' => "radarr.png", 'link' => 'https://radarr.home.aylo.net'], 
-            ['name' => 'Torrent', 'icon' => "qbittorrent.png", 'link' => 'https://torrent.home.aylo.net'], 
-            ['name' => 'Jackett', 'icon' => "jackett.png", 'link' => 'https://jackett.home.aylo.net'], 
-            ['name' => 'Nginx PM', 'icon' => "nginx-pm.png", 'link' => 'https://nginx-pm.home.aylo.net'], 
-            ['name' => 'Unifi', 'icon' => "unifi.png", 'link' => 'https://unifi.intnet.home.aylo.net'], 
+            ['name' => 'Tautulli', 'icon' => "tautulli.png", 'link' => 'https://tautulli.dy4.aylo.net'], 
+            ['name' => 'Sonarr', 'icon' => "sonarr.png", 'link' => 'https://sonarr.dy4.aylo.net'], 
+            ['name' => 'Radarr', 'icon' => "radarr.png", 'link' => 'https://radarr.dy4.aylo.net'], 
+            ['name' => 'Torrent', 'icon' => "qbittorrent.png", 'link' => 'https://torrent.dy4.aylo.net'], 
+            ['name' => 'Jackett', 'icon' => "jackett.png", 'link' => 'https://jackett.dy4.aylo.net'], 
+            ['name' => 'Pihole', 'icon' => "pihole.png", 'link' => 'https://pihole.dy4.aylo.net/admin/'], 
+            ['name' => 'Nginx PM', 'icon' => "nginx-pm.png", 'link' => 'https://nginx-pm.dy4.aylo.net'], 
+            ['name' => 'Unifi', 'icon' => "unifi.png", 'link' => 'https://unifi.dy4.aylo.net'], 
         ]);
     @endphp
 
@@ -28,7 +29,7 @@
 
     <div class="w-full flex flex-col flex-grow text-white" style="background: url('static/home/bg.webp')">
         <div class="flex-grow"></div>
-        <div class="flex flex-wrap justify-center pt-4 my-6 sm:my-0">
+        <div class="flex flex-wrap justify-center ">
         @foreach($mainlinks as $link)
             <a href="{{ $link['link'] }}" class="bg-gray-700 mx-2 my-2 p-3 rounded-xl shadow hover:bg-gray-400 transition">
                 <img src="static/home/{{ $link['icon'] }}" class="w-24 sm:w-32 sm:h-32 mx-auto" />
@@ -36,7 +37,7 @@
             </a>
         @endforeach
         </div>
-        <div class="flex flex-wrap justify-center pt-4 sm:pt-0 pb-4">
+        <div class="flex flex-wrap justify-center pt-0 pb-4">
         @foreach($otherlinks as $link)
             <a href="{{ $link['link'] }}" class="bg-gray-800 mx-2 my-2 p-3 rounded-xl shadow hover:bg-gray-400 transition">
                 <img src="static/home/{{ $link['icon'] }}" class="w-20 h-20 p-2" />
