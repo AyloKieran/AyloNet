@@ -3,6 +3,15 @@
         {{ __('403') }}
     </x-slot>
 
+    @guest
+        {{ session()->put('loginUrl', Request::getRequestUri()) }}
+
+        <script>
+            window.location.href = "{{ route('login') }}";
+
+        </script>
+    @endguest
+
     <div class="w-full bg-gray-100 flex flex-col md:h-screen mt-32 md:mt-0">
         <div class="flex-grow"></div>
         <div class="flex flex-col items-center">
@@ -14,7 +23,9 @@
                 <span>3</span>
             </section>
             <div class="text-gray-900">
-                <a href="{{ url()->previous() }}" class="bg-gray-300 p-2 rounded-md shadow-md hover:bg-gray-400 transition opacity-75 hover:opacity-90">Go Back</a>
+                <a href="{{ url()->previous() }}"
+                    class="bg-gray-300 p-2 rounded-md shadow-md hover:bg-gray-400 transition opacity-75 hover:opacity-90">Go
+                    Back</a>
             </div>
         </div>
         <div class="flex-grow"></div>
