@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\RedirectionController;
 use App\Http\Controllers\Admin\PostsController;
 use App\Http\Controllers\Admin\OverlayController;
 use App\Http\Controllers\Admin\UpdateController;
+use App\Http\Controllers\Admin\UploadController;
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/overlay', [OverlayController::class, 'index'])->name('overlay');
@@ -32,6 +33,16 @@ Route::prefix('admin')->group(function() {
         Route::get('{post}/edit', [PostsController::class, 'edit'])->name('admin.posts.edit');
         Route::patch('{post}/edit', [PostsController::class, 'update']);
         Route::delete('{post}/delete', [PostsController::class, 'destroy'])->name('admin.posts.delete');
+    });
+
+    Route::get('uploads', [UploadController::class, 'index'])->name('admin.uploads');
+    Route::prefix('uploads')->group(function() {
+        Route::get('create', [UploadController::class, 'create'])->name('admin.uploads.create');
+        Route::post('create', [UploadController::class, 'store']);
+
+        Route::get('{upload}/edit', [UploadController::class, 'edit'])->name('admin.uploads.edit');
+        Route::patch('{upload}/edit', [UploadController::class, 'update']);
+        Route::delete('{upload}/delete', [UploadController::class, 'destroy'])->name('admin.uploads.delete');
     });
 
     Route::get('users', [AdminUserController::class, 'index'])->name('admin.users');
