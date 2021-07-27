@@ -14,11 +14,21 @@
             <div class="p-6 bg-white text-black">
                 <form method="post" enctype="multipart/form-data" class="flex flex-col gap-4">
                     @csrf
-                    <x-input id="file" name="file" type="file" class="w-100"></x-input>
-
-                        @error('file')
-                            <p class="text-red-400">{{ $message }}</p>
+                    <div class="flex flex-col mb-1">
+                        <x-label for="name" class="font-bold">Name</x-label>
+                        <x-input id="name" name="name" class="{{ $errors->has('name') ? 'border-red-400' : '' }} px-1" value="{{ old('name') }}"></x-input>
+                        @error('name')
+                        <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
                         @enderror
+                    </div>
+
+                    <div class="flex flex-col mb-1">
+                        <x-label for="file" class="font-bold">File</x-label>
+                        <x-input id="file" name="file" type="file" class="w-100"></x-input>
+                        @error('file')
+                        <p class="text-sm text-red-500 mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
 
                     <x-button type="submit" name="submit" class="text-center mx-auto">
                         {{ __('Upload') }}
