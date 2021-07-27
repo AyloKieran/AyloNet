@@ -28,9 +28,8 @@ class AdminController extends Controller
         $uploads = Upload::orderByDesc('created_at')->get();
         $uploadsSize = 0;
         $version = File::get(base_path() . '/version.txt');
-        // dd(storage_path() . "\app\public\uploads");
 
-        foreach( File::allFiles(storage_path() . "\app\public\uploads") as $file)
+        foreach( File::allFiles(storage_path() . "/app/public/uploads") as $file)
         {
             $uploadsSize += $file->getSize();
         }
