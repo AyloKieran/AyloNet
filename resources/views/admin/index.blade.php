@@ -47,6 +47,20 @@
             </x-admin-dashboard.column>
             @endif
 
+            @if ($uploads->count() > 0)
+            <x-admin-dashboard.column>
+                <x-admin-dashboard.column-title>Uploads</x-admin-dashboard.column-title>
+                <x-admin-dashboard.card title="Total Uploads" content="{{ $uploads->count() }}" icon="fas fa-file-upload"
+                    colour="bg-pink-900" route="{{ route('admin.uploads') }}" />
+                <x-admin-dashboard.card title="Total Uploads Size" content="{{ $uploadsSize }}GB" icon="far fa-hdd" 
+                    colour="bg-pink-800" route="{{ route('admin.uploads') }}" />
+                <x-admin-dashboard.card title="Latest Upload"
+                    content="'{{ $uploads->first()->name }}' - {{ $uploads->first()->created_at->diffForHumans(null, false, true) }} ({{ $uploads->first()->creator()->name }})"
+                    icon="fas fa-file-import" colour="bg-pink-700"
+                    route="{{ route('admin.uploads.edit', $uploads->first()) }}" />
+            </x-admin-dashboard.column>
+            @endif
+
             <x-admin-dashboard.column>
                 <x-admin-dashboard.column-title>Deployment</x-admin-dashboard.column-title>
 
