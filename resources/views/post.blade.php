@@ -64,7 +64,7 @@
                             <p class="text-xs mb-1">{{ $post->excerpt }}</p>
                             <div class="flex">
                                 <div class="flex-grow"></div>
-                                <a href="{{ $post->route }}">
+                                <a href="/{{ $post->route }}">
                                     <button class="inline-flex items-center px-2 py-1 bg-gray-800 border border-transparent rounded-md font-semibold text-white hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
                                         <span class="text-xs">Read More</span>
                                     </button>
