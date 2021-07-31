@@ -100,7 +100,7 @@
                 </div>
             </div>
             <div class="mt-8 mb-12 lg:mb-0">
-                <a href="{{ route('contact') }}" class="text-md font-semibold p-1 px-3 rounded-3xl bg-gray-700 text-white hover:shadow-xl hover:text-white hover:bg-gray-900 transition">Contact for more info</a>
+                <a href="/contact" class="text-md font-semibold p-1 px-3 rounded-3xl bg-gray-700 text-white hover:shadow-xl hover:text-white hover:bg-gray-900 transition">Contact for more info</a>
             </div>
             <img src="static/portfolio/separator6.svg" class="w-100">
         </div>
@@ -215,18 +215,6 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="text-white" style="background-image: url('static/portfolio/bg2.webp'); background-repeat: no-repeat; background-size: cover;">
-            <img src="static/portfolio/separator4.svg" class="w-100">
-            <h2 class="text-2xl font-semibold mt-8 sm:mt-0">Contact</h2>
-            <p class="text-gray-300">See something you like or want more info?</p>
-            <p class="text-gray-300">Give me a shout and I'll get back to you ASAP 😄</p>
-            <h3 class="text-lg font-semibold text-center mt-6">Contact Me</h3>
-            <div class="mx-4 sm:mx-0">
-                <x-contact-card class="bg-gray-300 text-black"/>
-            </div>
-            <img src="static/portfolio/separator1.svg" class="mt-8 w-100">
-            <span id="contact"></span>
-        </div> -->
     </div>
 
     <script>
