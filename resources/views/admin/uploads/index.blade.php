@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="text-truegray-600">
-            <div class="w-100 mt-4 flex flex-wrap">
+            <div class="w-100 mt-4 flex flex-wrap justify-center">
                 @forelse ($uploads as $upload)
                     <x-upload-card :upload="$upload" />
                 @empty

@@ -49,7 +49,7 @@
                     <h2 class="mb-2 text-md font-semibold">Tags</h2>
                     <div class="flex flex-wrap inline-flex mt-2 justify-center">
                         @foreach (explode(', ', $post->tags) as $tag)
-                            <a href="posts/tag/{{ $tag }}" class="bg-gray-200 hover:bg-gray-300 hover:shadow transition rounded-full px-3 py-1 mr-2 mb-2">#{{ $tag }}</a>
+                            <a href="/posts/tag/{{ $tag }}" class="bg-gray-200 hover:bg-gray-300 hover:shadow transition rounded-full px-3 py-1 mr-2 mb-2">#{{ $tag }}</a>
                         @endforeach
                     </div>
                 </x-card>
