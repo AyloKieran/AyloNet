@@ -61,6 +61,18 @@
             </x-admin-dashboard.column>
             @endif
 
+            @if ($lists->count() > 0)
+            <x-admin-dashboard.column>
+                <x-admin-dashboard.column-title>Lists</x-admin-dashboard.column-title>
+                <x-admin-dashboard.card title="Total Lists" content="{{ $lists->count() }}" icon="fas fa-stream"
+                    colour="bg-purple-900" route="/decisionmaker" />
+                <x-admin-dashboard.card title="Latest List"
+                    content="'{{ $lists->first()->name }}' - {{ $lists->first()->created_at->diffForHumans(null, false, true) }} ({{ $lists->first()->creator()->name }})"
+                    icon="fas fa-clipboard-list" colour="bg-purple-800"
+                    route="/decisionmaker?list={{ $lists->first()->id }}" />
+            </x-admin-dashboard.column>
+            @endif
+
             <x-admin-dashboard.column>
                 <x-admin-dashboard.column-title>Deployment</x-admin-dashboard.column-title>
 
