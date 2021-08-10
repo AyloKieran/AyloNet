@@ -30,7 +30,7 @@ class DecisionMaker extends Component
 
     public function getLists() {
         if(auth()->user()) {
-            $this->lists = DecisionMakerSavedLists::where('user_id', auth()->user()->id)->get();
+            $this->lists = DecisionMakerSavedLists::where('user_id', auth()->user()->id)->get()->sortByDesc("updated_at");
         }
     }
 

@@ -1,11 +1,11 @@
-<div class="flex-grow flex flex-col lg:flex-row text-white bg-gray-900 text-center">
+<div class="flex-grow lg:h-screen flex flex-col lg:flex-row text-white bg-gray-900 text-center px-4 md:px-0">
     <div class="flex flex-col flex-grow">
         @if ($this->chosen == "")
         <h1 class="text-3xl font-semibold mt-6 md:mt-12 mb-6">
             @if ($this->listName != "")
-                {{ $this->listName }}
-                @else
-                Decision Maker
+            {{ $this->listName }}
+            @else
+            Decision Maker
             @endif
         </h1>
         <ul class="list text-black flex flex-col">
@@ -56,42 +56,48 @@
         @endif
     </div>
     @if (auth()->user())
-    <div class="flex flex-col bg-gray-800 w-100 lg:w-1/3 xl:w-1/4">
+    <div class="flex flex-col lg:bg-gray-800 mx-auto w-100 md:w-2/3 lg:w-2/5 xl:w-1/4 mt-20 lg:mt-0">
         <h2 class="text-xl font-semibold py-4 bg-gray-900">Saved Lists</h2>
-        @forelse($this->lists as $list)
-        <div class="flex bg-gray-700 my-2 px-3 hover:bg-gray-600 transition">
-            <a href="/decisionmaker?list={{ $list->id }}" class="flex-grow">
-                <h3 class="font-semibold text-lg">{{ $list->name }}</h3>
-                <p class="text-gray-300">
-                    @foreach(unserialize($list->list) as $listItem)
+        <div class="lg:overflow-y-scroll bg-gray-800 rounded-xl lg:rounded-none flex-grow">
+            @forelse($this->lists as $list)
+            <div class="flex bg-gray-700 hover:bg-gray-600 transition rounded-xl lg:rounded-none {{ $loop->last ? '' : 'mb-2' }}">
+                <a href="/decisionmaker?list={{ $list->id }}" class="flex-grow">
+                    <h3 class="font-semibold text-lg">{{ $list->name != "" ? $list->name : "No Name" }}</h3>
+                    <p class="text-gray-300">
+                        @foreach(unserialize($list->list) as $listItem)
                         @if ($loop->last)
-                            {{ $listItem }}
+                        {{ $listItem }}
                         @else
-                            {{ $listItem }},
+                        {{ $listItem }},
                         @endif
-                    @endforeach
-                </p>
-            </a>
-            <button wire:click="deleteList('{{$list->id}}')">🗑</button>
+                        @endforeach
+                    </p>
+                </a>
+                <button wire:click="deleteList('{{$list->id}}')" class="rounded-xl bg-red-800 hover:bg-red-700 transition px-4 lg:rounded-r-none">🗑</button>
+            </div>
+            @empty
+            <p class="my-2">No saved lists.</p>
+            @endforelse
         </div>
-        @empty
-        <p class="my-2">No saved lists.</p>
-        @endforelse
         <div class="flex-grow"></div>
         <div class="flex flex-col px-5 py-4 bg-gray-900">
             <label for="listName" class="text-left mx-2 text-sm font-semibold">List Name:</label>
             <input class="rounded-xl text-black mx-1" wire:model='listName' type="text" id="listName">
             <div class="flex flex-grow">
-            <x-button class="bg-blue-700 hover:bg-blue-800 mx-1 mt-2 text-xs" wire:click="newList">
-                New List
-            </x-button>
-            <div class="flex-grow"></div>
-            @if (!$this->list || $this->listUser == auth()->user()->id)
-            <x-button class="bg-green-700 hover:bg-green-800 mx-1 mt-2" wire:click="saveList">
-                Save
-            </x-button>
-            @endif
-        </div>
+                <x-button class="bg-blue-700 hover:bg-blue-800 mx-1 mt-2 text-xs" wire:click="newList">
+                    New List
+                </x-button>
+                <div class="flex-grow"></div>
+                @if (!$this->list || $this->listUser == auth()->user()->id)
+                <x-button class="bg-green-700 hover:bg-green-800 mx-1 mt-2" wire:click="saveList">
+                    @if($this->list != "")
+                    Update
+                    @else
+                    Save
+                    @endif
+                </x-button>
+                @endif
+            </div>
         </div>
     </div>
     @endif
