@@ -11,6 +11,7 @@ use App\Models\Redirections;
 use App\Models\User;
 use App\Models\Posts;
 use App\Models\Upload;
+use App\Models\DecisionMakerSavedLists;
 
 class AdminController extends Controller
 {
@@ -28,6 +29,7 @@ class AdminController extends Controller
         $uploads = Upload::orderByDesc('created_at')->get();
         $uploadsSize = 0;
         $version = File::get(base_path() . '/version.txt');
+        $lists = DecisionMakerSavedLists::orderByDesc('created_at')->get();
 
         foreach( File::allFiles(storage_path() . "/app/public/uploads") as $file)
         {
@@ -43,6 +45,7 @@ class AdminController extends Controller
             ->with('posts', $posts)
             ->with('uploads', $uploads)
             ->with('uploadsSize', $uploadsSize)
-            ->with('version', $version);
+            ->with('version', $version)
+            ->with('lists', $lists);
     }
 }

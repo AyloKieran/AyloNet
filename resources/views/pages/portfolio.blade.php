@@ -18,7 +18,7 @@
                         <h2 class="text-lg text-gray-300 h-6 mr-1 mb-8 lg:mb-4" id="typed"></h2>
                     </div>
                 </div>
-                <img src="static/portfolio/separator1.svg" class="w-100">
+                <img src="static/portfolio/separator1.svg" class="w-100" loading="lazy" width="1920px" height="201px">
                 <div class="flex-grow"></div> 
             </div>
         </div>
@@ -64,7 +64,7 @@
             </div>
         </div>
         <div class="mt-6 text-white" style="background-image: url('static/portfolio/bg3.webp'); background-repeat: no-repeat; background-size: cover;">
-            <img src="static/portfolio/separator2.svg" class="w-100">
+            <img src="static/portfolio/separator2.svg" class="w-100" loading="lazy" width="1920px" height="201px">
             <h2 class="text-2xl font-semibold mt-8 md:mt-8 lg:mt-0 mb-6">Education & Experience</h2>
             <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row">
                 <div class="flex-1 flex-grow text-center sm:text-right md:text-center lg:text-right mx-2">
@@ -102,16 +102,15 @@
             <div class="mt-8 mb-12 lg:mb-0">
                 <a href="/contact" class="text-md font-semibold p-1 px-3 rounded-3xl bg-gray-700 text-white hover:shadow-xl hover:text-white hover:bg-gray-900 transition">Contact for more info</a>
             </div>
-            <img src="static/portfolio/separator6.svg" class="w-100">
+            <img src="static/portfolio/separator6.svg" class="w-100" loading="lazy" width="1920px" height="201px">
         </div>
         <div class="pt-6 lg:pt-0 text-white" style="background-color: #0397d6">
-            <!-- <h2 class="text-2xl font-semibold">Harmony</h2> -->
-            <img src="static/portfolio/harmony-white.svg" class="mx-auto h-16">
+            <img src="static/portfolio/harmony-white.svg" class="mx-auto h-16" loading="lazy">
             <h2 class="text-lg font-semibold text-gray-300 mb-10 -mt-5" style="margin-left: 4.5em;">Ecommerce Music Store</h2>
             <div class="flex flex-col lg:flex-row max-w-6xl px-4 xl:mx-auto text-left">
                 <div class="flex-1">
                     <div class="flex-1 flex-grow flex flex-col">
-                        <img src="static/portfolio/harmony.webp">
+                        <img src="static/portfolio/harmony.webp" loading="lazy" width="1920px" height="1080px">
                     </div>
                     <div class="flex-grow"></div>
                 </div>
@@ -141,27 +140,27 @@
                             <div class="flex-grow"></div>
                             <div class="flex">
                                 <div class="flex-grow"></div>
-                                <a class="text-xs p-2 bg-blue-400 border border-blue-500 hover:bg-blue-500 hover:border-blue-600 rounded-lg transition shadow-sm hover:shadow-md" href="https://harmony.aylo.net">View Project <i class="fas fa-angle-double-right" aria-hidden="true"></i></a>
+                                <a class="text-xs p-2 bg-blue-400 border border-blue-500 hover:bg-blue-500 hover:border-blue-600 rounded-lg transition shadow-sm hover:shadow-md" href="https://aylo.net/university/harmony">View Project <i class="fas fa-angle-double-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <img src="static/portfolio/separator3.svg" class="mt-8 w-100">
+            <img src="static/portfolio/separator3.svg" class="mt-8 w-100" loading="lazy" width="1920px" height="201px">
         </div>
         <div class="pt-6 sm:pt-0 pb-12">
             <h2 class="text-2xl font-semibold mb-6">Projects</h2>
             <div class="flex flex-col lg:flex-row max-w-6xl px-4 xl:mx-auto text-left">
                 <div class="flex-1">
                     <div class="flex-1 flex-grow flex flex-col mb-2 bg-gray-100 rounded-xl p-2 shadow-md">
-                        <img class="w-100 rounded-xl shadow" src="static/portfolio/PEI.webp">
+                        <img class="w-100 rounded-xl shadow" src="static/portfolio/PEI.webp" loading="lazy" width="447px" height="298px">
                         <div class="m-2 mb-0">
                             <h3 class="text-xl"><span class="font-semibold">Photography</span> - Experimental Imagery <span class="text-gray-700 text-sm">Jan 2019</span></h3>
                             <p class="text-sm mb-1">An A* Project based on breaking the rules of photography and carving your own path. For this, I also created a video outcome which went above and beyond the brief.</p>
                         </div>
                         <div class="flex">
                             <div class="flex-grow"></div>
-                            <a class="text-xs p-2 bg-gray-100 border border-gray-300 hover:bg-gray-300 hover:border-gray-400 rounded-lg transition shadow-sm hover:shadow-md" href="http://dl.aylo.net/Experimental%20Imagery%20Final.pdf">View Project <i class="fas fa-angle-double-right" aria-hidden="true"></i></a>
+                            <a class="text-xs p-2 bg-gray-100 border border-gray-300 hover:bg-gray-300 hover:border-gray-400 rounded-lg transition shadow-sm hover:shadow-md" href="https://aylo.net/photography/experimental-imagery">View Project <i class="fas fa-angle-double-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
                     <div class="flex-grow"></div>
@@ -169,14 +168,14 @@
                 <div class="flex-1 flex-grow flex flex-col">
                     <div class="flex-1 mx-2 flex flex-col mb-2 bg-gray-100 rounded-xl p-2 shadow-md">
                         <div class="flex">
-                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/PPS.webp">
+                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/PPS.webp" loading="lazy" width="128px" height="128px">
                             <div class="ml-2 flex-col">
                                 <h3 class="text-lg"><span class="font-semibold">Photography</span> - Parts and Sections <span class="text-gray-600 text-xs">Apr 2019</span></h3>
                                 <p class="text-sm mb-1">An A* Project based on breaking the rules of photography and carving your own path. For this, I also created a video outcome which went above and beyond the brief.</p>
                                 <div class="flex-grow"></div>
                                 <div class="flex">
                                     <div class="flex-grow"></div>
-                                    <a class="text-xs p-2 bg-gray-100 border border-gray-300 hover:bg-gray-300 hover:border-gray-400 rounded-lg transition shadow-sm hover:shadow-md" href="http://dl.aylo.net/Experimental%20Imagery%20Final.pdf">View Project <i class="fas fa-angle-double-right" aria-hidden="true"></i></a>
+                                    <a class="text-xs p-2 bg-gray-100 border border-gray-300 hover:bg-gray-300 hover:border-gray-400 rounded-lg transition shadow-sm hover:shadow-md" href="https://aylo.net/photography/parts-and-sections">View Project <i class="fas fa-angle-double-right" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -184,7 +183,22 @@
 
                     <div class="flex-1 mx-2 flex flex-col mb-2 bg-gray-100 rounded-xl p-2 shadow-md">
                         <div class="flex">
-                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/ALG.webp">
+                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/UAP.webp" loading="lazy" width="128px" height="128px">
+                            <div class="ml-2 flex flex-col">
+                                <h3 class="text-lg"><span class="font-semibold">Photi</span> <span class="text-gray-600 text-xs">Jan 2021</span></h3>
+                                <p class="text-sm mb-1">An Android and web app written for a University Assignment - based on a new social media network concept.</p>
+                                <div class="flex-grow"></div>
+                                <div class="flex">
+                                    <div class="flex-grow"></div>
+                                    <a class="text-xs p-2 bg-gray-100 border border-gray-300 hover:bg-gray-300 hover:border-gray-400 rounded-lg transition shadow-sm hover:shadow-md" href="https://aylo.net/university/photi">View Project <i class="fas fa-angle-double-right" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 mx-2 flex flex-col mb-2 bg-gray-100 rounded-xl p-2 shadow-md">
+                        <div class="flex">
+                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/ALG.webp" loading="lazy" width="128px" height="128px">
                             <div class="ml-2 flex flex-col">
                                 <h3 class="text-lg"><span class="font-semibold">ayloNet</span> <span class="text-gray-600 text-xs">2019 - Current</span></h3>
                                 <p class="text-sm mb-1">A collection of servers and services that run my home automation and media management.</p>
@@ -197,20 +211,6 @@
                         </div>
                     </div>
 
-                    <div class="flex-1 mx-2 flex flex-col mb-2 bg-gray-100 rounded-xl p-2 shadow-md">
-                        <div class="flex">
-                            <img class="w-32 h-32 rounded-xl shadow" src="static/portfolio/GPC.webp">
-                            <div class="ml-2 flex flex-col">
-                                <h3 class="text-lg"><span class="font-semibold">Graphic Products</span> Coursework <span class="text-gray-600 text-xs">Jun 2017</span></h3>
-                                <p class="text-sm mb-1">An A* project created for GCSE Graphics Products to a proposal surrounding the design and production of bottles and their packaging.</p>
-                                <div class="flex-grow"></div>
-                                <div class="flex">
-                                    <div class="flex-grow"></div>
-                                    <a class="text-xs p-2 bg-gray-100 border border-gray-300 hover:bg-gray-300 hover:border-gray-400 rounded-lg transition shadow-sm hover:shadow-md" href="http://dl.aylo.net/GCSE%20Graphics%20Coursework.pdf">View Project <i class="fas fa-angle-double-right" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="flex-grow"></div>
                 </div>
             </div>
