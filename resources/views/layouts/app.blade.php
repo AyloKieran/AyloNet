@@ -57,5 +57,7 @@
         <main class="flex-grow bg-truegray-100 text-black flex flex-col pt-12 md:pt-0 md:pl-72">
             {{ $slot }}
         </main>
+
+        @include('layouts.popup')
     </body>
 </html>
