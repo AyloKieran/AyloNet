@@ -19,18 +19,24 @@ class DecisionMaker extends Component
     public function mount() {
         $this->getLists();
         if ($this->list) {
-            $list = DecisionMakerSavedLists::where(['id' => $this->list])->first();
-            if ($list) {
-                $this->options = unserialize($list->list);
-                $this->listName = $list->name;
-                $this->listUser = $list->user_id;
-            }
+            $this->getCurrentList();
         }
     }
 
     public function getLists() {
         if(auth()->user()) {
             $this->lists = DecisionMakerSavedLists::where('user_id', auth()->user()->id)->get()->sortByDesc("updated_at");
+        }
+    }
+
+    public function getCurrentList() {
+        $list = DecisionMakerSavedLists::where(['id' => $this->list])->first();
+        if ($list) {
+            $this->options = unserialize($list->list);
+            $this->listName = $list->name;
+            $this->listUser = $list->user_id;
+        } else {
+            $this->newList();
         }
     }
 
@@ -63,6 +69,11 @@ class DecisionMaker extends Component
             $list->delete();
         }
         $this->getLists();
+    }
+
+    public function selectList($id) {
+        $this->list = $id;
+        $this->getCurrentList();
     }
 
     public function newList() {

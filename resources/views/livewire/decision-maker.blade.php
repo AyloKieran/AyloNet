@@ -61,7 +61,7 @@
         <div class="lg:overflow-y-scroll bg-gray-800 rounded-xl lg:rounded-none flex-grow">
             @forelse($this->lists as $list)
             <div class="flex bg-gray-700 hover:bg-gray-600 transition rounded-xl lg:rounded-none {{ $loop->last ? '' : 'mb-2' }}">
-                <a href="/decisionmaker?list={{ $list->id }}" class="flex-grow">
+                <a wire:click="selectList('{{ $list->id }}')" class="flex-grow">
                     <h3 class="font-semibold text-lg">{{ $list->name != "" ? $list->name : "No Name" }}</h3>
                     <p class="text-gray-300">
                         @foreach(unserialize($list->list) as $listItem)
