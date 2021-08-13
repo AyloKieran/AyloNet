@@ -43,9 +43,15 @@
                 {{ $uploads->links() }}
             </div>
         </div>
-
-
     </x-card>
 
-    </div>
+    <script>
+        function copyToClipboard(url) {
+            formattedUrl = '{{URL::to("/")}}' + '/' + url;
+            
+            navigator.clipboard.writeText(formattedUrl).then(function() {
+                popup.update("Clipboard", "Successfully copied to clipboard!");
+            });
+        }
+    </script>
 </x-app-layout>

@@ -24,7 +24,7 @@
             </a>
 
             <a href="{{ route('admin.uploads.edit', [$upload]) }}">
-                <button class="bg-truegray-700 w-7 h-7 rounded shadow text-white">
+                <button class="bg-truegray-700 w-7 h-7 rounded shadow text-white" onclick="event.preventDefault(); copyToClipboard('{{ $upload->uploadUrl }}')">
                     <i class="far fa-clipboard"></i>
                 </button>
             </a>
