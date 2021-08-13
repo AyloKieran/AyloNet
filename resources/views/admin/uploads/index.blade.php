@@ -45,6 +45,15 @@
         </div>
     </x-card>
 
+    <div class="fixed flex flex-col bottom-0 right-0 w-5/6 sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 h-auto bg-gray-700 opacity-90 hover:opacity-100 text-white m-6 px-6 py-4 rounded-xl shadow-lg transition">
+        <div class="flex">
+            <p class="flex-grow text-lg font-bold">Clipboard</p>
+            <a class="pl-4 font-bold text-gray-500 hover:text-white transition">X</a>
+        </div>
+        <p class="mb-1 -mt-1 text-gray-200">Copied to clipboard</p>
+        <div class="bg-white rounded-xl opacity-25" style="height: 2px; width: 100%"></div>
+    </div>
+
     <script>
         function copyToClipboard(url) {
             formattedUrl = '{{URL::to("/")}}' + '/' + url;
