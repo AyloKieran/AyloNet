@@ -50,9 +50,9 @@
             @if ($uploads->count() > 0)
             <x-admin-dashboard.column>
                 <x-admin-dashboard.column-title>Uploads</x-admin-dashboard.column-title>
-                <x-admin-dashboard.card title="Total Uploads" content="{{ $uploads->count() }}" icon="fas fa-file-upload"
-                    colour="bg-pink-900" route="{{ route('admin.uploads') }}" />
-                <x-admin-dashboard.card title="Total Uploads Size" content="{{ $uploadsSize }}GB" icon="far fa-hdd" 
+                <x-admin-dashboard.card title="Total Uploads" content="{{ $uploads->count() }}"
+                    icon="fas fa-file-upload" colour="bg-pink-900" route="{{ route('admin.uploads') }}" />
+                <x-admin-dashboard.card title="Total Uploads Size" content="{{ $uploadsSize }}GB" icon="far fa-hdd"
                     colour="bg-pink-800" route="{{ route('admin.uploads') }}" />
                 <x-admin-dashboard.card title="Latest Upload"
                     content="'{{ $uploads->first()->name }}' - {{ $uploads->first()->created_at->diffForHumans(null, false, true) }} ({{ $uploads->first()->creator()->name }})"
@@ -92,7 +92,8 @@
                         <div id="updateArea"
                             class="bg-yellow-900 bg-opacity-50 group hover:bg-opacity-90 rounded-full w-8 h-8 ml-2 my-auto flex text-white transition animate-spin">
                             <div class="flex-grow"></div>
-                            <form class="w-8 h-8 text-center align-middle my-auto" method="POST" action="{{ route('admin.update') }}">
+                            <form class="w-8 h-8 text-center align-middle my-auto" method="POST"
+                                action="{{ route('admin.update') }}">
                                 @csrf
                                 <button class="h-8">
                                     <i id="updateIcon" class="fas fa-spinner fa-sm w-8"></i>
@@ -114,10 +115,15 @@
                 <x-admin-dashboard.card title="Environment" content="{{ $env }}" icon="fas fa-file-code"
                     colour="bg-yellow-600" route="/github" />
 
-
             </x-admin-dashboard.column>
-        </div>
 
+            <x-admin-dashboard.column>
+                <x-admin-dashboard.column-title>Links</x-admin-dashboard.column-title>
+                <x-admin-dashboard.link title="Overlay" icon="fas fa-newspaper" colour="bg-gray-600"
+                   route="/overlay" />
+            </x-admin-dashboard.column>
+
+        </div>
     </div>
 
     <script>
@@ -129,10 +135,10 @@
                 .then(function (data) {
                     var update = data["updateAvailable"];
 
-                    var updateArea = document.getElementById("updateArea"); 
-                    var updateIcon = document.getElementById("updateIcon"); 
+                    var updateArea = document.getElementById("updateArea");
+                    var updateIcon = document.getElementById("updateIcon");
 
-                    if(update) {
+                    if (update) {
                         updateArea.classList.toggle("animate-spin");
                         updateArea.classList.toggle("bg-yellow-900");
                         updateArea.classList.toggle("bg-green-700");
@@ -150,5 +156,6 @@
                     updateIcon.classList.toggle("fa-exclamation");
                 });
         })();
+
     </script>
 </x-app-layout>
