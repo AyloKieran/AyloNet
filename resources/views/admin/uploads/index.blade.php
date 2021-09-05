@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <x-card>
+    <x-card class="max-w-7xl">
         <div class="flex">
             <div class="flex-grow"></div>
             <div class="flex">

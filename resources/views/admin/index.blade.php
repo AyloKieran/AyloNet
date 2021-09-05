@@ -119,8 +119,10 @@
 
             <x-admin-dashboard.column>
                 <x-admin-dashboard.column-title>Links</x-admin-dashboard.column-title>
-                <x-admin-dashboard.link title="Overlay" icon="fas fa-newspaper" colour="bg-gray-600"
+                <x-admin-dashboard.link title="Overlay" icon="fas fa-tv" colour="bg-gray-800"
                    route="/overlay" />
+                <x-admin-dashboard.link title="Overlay Admin" icon="fas fa-expand-arrows-alt" colour="bg-gray-700"
+                   route="/admin/overlay" />
             </x-admin-dashboard.column>
 
         </div>
