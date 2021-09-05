@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <x-card>
+    <x-card class="max-w-7xl">
         <div class="flex">
             <div class="flex-grow"></div>
             <div class="flex">
@@ -43,9 +43,15 @@
                 {{ $uploads->links() }}
             </div>
         </div>
-
-
     </x-card>
 
-    </div>
+    <script>
+        function copyToClipboard(url) {
+            formattedUrl = '{{URL::to("/")}}' + '/' + url;
+            
+            navigator.clipboard.writeText(formattedUrl).then(function() {
+                popup.update("Clipboard", "Successfully copied to clipboard!");
+            });
+        }
+    </script>
 </x-app-layout>

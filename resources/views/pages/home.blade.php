@@ -7,16 +7,17 @@
         $mainlinks = collect([
             ['name' => 'HASS', 'icon' => "homeassistant.png", 'link' => 'https://hass.dy4.aylo.net'], 
             ['name' => 'Plex', 'icon' => "plex.png", 'link' => 'https://plex.dy4.aylo.net'], 
-            ['name' => 'Ombi', 'icon' => "ombi.png", 'link' => 'https://ombi.dy4.aylo.net'], 
+            ['name' => 'Ombi', 'icon' => "ombi.png", 'link' => 'https://ombi.cv10.aylo.net'], 
         ]);
         $otherlinks = collect([
-            ['name' => 'Tautulli', 'icon' => "tautulli.png", 'link' => 'https://tautulli.dy4.aylo.net'], 
-            ['name' => 'Sonarr', 'icon' => "sonarr.png", 'link' => 'https://sonarr.dy4.aylo.net'], 
-            ['name' => 'Radarr', 'icon' => "radarr.png", 'link' => 'https://radarr.dy4.aylo.net'], 
-            ['name' => 'Torrent', 'icon' => "qbittorrent.png", 'link' => 'https://torrent.dy4.aylo.net'], 
-            ['name' => 'Jackett', 'icon' => "jackett.png", 'link' => 'https://jackett.dy4.aylo.net'], 
+            ['name' => 'Tautulli', 'icon' => "tautulli.png", 'link' => 'https://tautulli.cv10.aylo.net'], 
+            ['name' => 'Sonarr', 'icon' => "sonarr.png", 'link' => 'https://sonarr.cv10.aylo.net'], 
+            ['name' => 'Radarr', 'icon' => "radarr.png", 'link' => 'https://radarr.cv10.aylo.net'], 
+            ['name' => 'Torrent', 'icon' => "qbittorrent.png", 'link' => 'https://torrent.cv10.aylo.net'], 
+            ['name' => 'Jackett', 'icon' => "jackett.png", 'link' => 'https://jackett.cv10.aylo.net'], 
             ['name' => 'Pihole', 'icon' => "pihole.png", 'link' => 'https://pihole.dy4.aylo.net/admin/'], 
-            ['name' => 'Nginx PM', 'icon' => "nginx-pm.png", 'link' => 'https://nginx-pm.dy4.aylo.net'], 
+            ['name' => 'N-PM DY4', 'icon' => "nginx-pm.png", 'link' => 'https://nginx-pm.dy4.aylo.net'],
+            ['name' => 'N-PM CV10', 'icon' => "nginx-pm.png", 'link' => 'https://nginx-pm.cv10.aylo.net'],
             ['name' => 'Unifi', 'icon' => "unifi.png", 'link' => 'https://unifi.dy4.aylo.net'], 
         ]);
     @endphp
