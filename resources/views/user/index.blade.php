@@ -18,32 +18,21 @@
 
     <x-card class="pt-4">
         <h1 class="text-xl font-semibold text-center mb-2">Update Details</h1>
-        @if(auth()->user()->provider == "google")
-            <h2 class="text-sm font-semibold text-center mb-2 mx-2 rounded-lg text-red-600 bg-yellow-100">You are using a Google account - please update your details there!</h2>
-        @endif
         <div class="flex flex-col lg:flex-row text-center">
             <div class="flex flex-1 flex-grow flex-col bg-gray-100 rounded-lg mx-2 p-2 mb-2 lg:mb-0">
                 <h2 class="font-semibold mx-auto mb-2">Avatar</h2>
                 <form method="POST" enctype="multipart/form-data" action="{{ route('user.update.avatar') }}">
                     @CSRF
                     @METHOD('PATCH')
-                    @if(auth()->user()->provider == "google")
-                        <x-input id="avatar" name="avatar" type="file" class="w-100" disabled></x-input>
-                    @else
-                        <x-input id="avatar" name="avatar" type="file" class="w-100"></x-input>
+                    <x-input id="avatar" name="avatar" type="file" class="w-100"></x-input>
 
-                        @error('avatar')
-                            <p class="text-red-400">{{ $message }}</p>
-                        @enderror
-                    @endif
+                    @error('avatar')
+                        <p class="text-red-400">{{ $message }}</p>
+                    @enderror
 
                     <div class="flex mt-2"> 
                         <div class="flex-grow"></div>
-                        @if(auth()->user()->provider == "google")
-                            <x-button disabled>Upload</x-button>
-                        @else
-                            <x-button>Upload</x-button>
-                        @endif
+                        <x-button>Upload</x-button>
                     </div>
                 </form>
             </div>
@@ -52,7 +41,7 @@
                 <form method="POST" enctype="multipart/form-data" action="{{ route('user.update.details') }}">
                     @CSRF
                     @METHOD('PATCH')
-                    @if(auth()->user()->provider == "google")
+                    @if(auth()->user()->provider == "azure")
                         <div class="flex flex-col w-100">
                             <x-label for="name" class="mr-2 text-left font-bold align-middle">Name:</x-label>
                             <x-input type="text" name="name" id="name" class="w-100 bg-gray-100" disabled></x-input>
@@ -84,7 +73,7 @@
 
                     <div class="flex mt-2"> 
                         <div class="flex-grow"></div>
-                        @if(auth()->user()->provider == "google")
+                        @if(auth()->user()->provider == "azure")
                             <x-button disabled>Submit</x-button>
                         @else
                             <x-button>Submit</x-button>
@@ -97,7 +86,7 @@
                 <form method="POST" enctype="multipart/form-data" action="{{ route('user.update.password') }}">
                     @CSRF
                     @METHOD('PATCH')
-                    @if(auth()->user()->provider == "google")
+                    @if(auth()->user()->provider == "azure")
                         <div class="flex flex-col w-100">
                             <x-label for="current_password" class="mr-2 text-left font-bold align-middle">Current Password:</x-label>
                             <x-input type="password" name="current_password" id="current_password" class="w-100 bg-gray-100" disabled/>
@@ -135,7 +124,7 @@
 
                     <div class="flex mt-2"> 
                         <div class="flex-grow"></div>
-                        @if(auth()->user()->provider == "google")
+                        @if(auth()->user()->provider == "azure")
                             <x-button disabled>Submit</x-button>
                         @else
                             <x-button>Submit</x-button>

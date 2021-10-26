@@ -9,16 +9,16 @@ use App\Models\User;
 use Carbon\Carbon;
 use Auth;
 
-class GoogleOAuthController extends Controller
+class AzureOAuthController extends Controller
 {
     public function redirect()
     { 
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('azure')->redirect();
     }
 
     public function callback()
     {
-        $user = Socialite::driver('google')->stateless()->user();
+        $user = Socialite::driver('azure')->stateless()->user();
 
         $this->_registerOrLoginUser($user);
 
@@ -27,18 +27,17 @@ class GoogleOAuthController extends Controller
 
     public function _registerOrLoginUser($data)
     {
-        $user = User::where([['email', $data->email], ['provider', "google"]])->first();
+        $user = User::where([['email', $data->email], ['provider', "azure"]])->first();
         if(!$user) {
             $user = new User();
 
-            $user->name = $data->name;
-            $user->email = $data->email;
-            $user->provider = "google";
-            $user->provider_id = $data->id;
+            $user->email = $data->user['userPrincipalName'];
+            $user->provider = "azure";
+            $user->provider_id = $data->user['id'];
             $user->email_verified_at = Carbon::now();
         }
-
-        $user->avatar = $data->avatar;
+        $user->name = $data->user['displayName'];
+        
         $user->save();
 
         Auth::login($user);
