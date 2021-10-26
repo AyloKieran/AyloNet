@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\Auth\GoogleOAuthController;
+use App\Http\Controllers\Auth\AzureOAuthController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
@@ -11,8 +11,8 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 
-Route::get('/auth/google/login', [GoogleOAuthController::class, 'redirect'])->name('googlelogin');
-Route::get('/auth/google/callback', [GoogleOAuthController::class, 'callback']);
+Route::get('/auth/azure/login', [AzureOAuthController::class, 'redirect'])->name('azurelogin');
+Route::get('/auth/azure/callback', [AzureOAuthController::class, 'callback']);
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
                 ->middleware('guest')

@@ -21,25 +21,21 @@ class UserController extends Controller
     {
         $user = auth()->user();
 
-        if($user->provider == "aylo.net") {
-            $attributes = request()->validate([
-                'avatar' => ['file', 'max:2560', 'mimes:jpeg,png,bmp,tiff,webp']
-            ]);
+        $attributes = request()->validate([
+            'avatar' => ['file', 'max:2560', 'mimes:jpeg,png,bmp,tiff,webp']
+        ]);
 
-            if(request('avatar')) {
-                $avatar = request('avatar')->store('avatars');
-    
-                $user->avatar = 'storage/' . $avatar;
-            } else {
-                $user->avatar = NULL;
-            }
+        if(request('avatar')) {
+            $avatar = request('avatar')->store('avatars');
 
-            $user->save();
-
-            return back();
+            $user->avatar = 'storage/' . $avatar;
         } else {
-            return abort(403);
-        }        
+            $user->avatar = NULL;
+        }
+
+        $user->save();
+
+        return back();     
     }
 
     public function updateDetails()
