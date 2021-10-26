@@ -43,8 +43,8 @@
 
     <x-card class="pt-4">
         <h1 class="text-xl font-semibold text-center mb-2">Update Details</h1>
-        @if($user->provider == "google")
-            <h2 class="text-sm font-semibold text-center mb-2 mx-2 rounded-lg text-red-600 bg-yellow-100">User is using a Google Account. Unable to edit information here.</h2>
+        @if($user->provider == "azure")
+            <h2 class="text-sm font-semibold text-center mb-2 mx-2 rounded-lg text-red-600 bg-yellow-100">User is using a Azure Account. Unable to edit information here.</h2>
         @endif
         <div class="flex flex-col lg:flex-row text-center">
             <div class="flex flex-1 flex-grow flex-col bg-gray-100 rounded-lg mx-2 p-2 mb-2 lg:mb-0">
@@ -52,7 +52,7 @@
                 <form method="POST" enctype="multipart/form-data" action="{{ route('admin.users.update.avatar', [$user]) }}">
                     @CSRF
                     @METHOD('PATCH')
-                    @if($user->provider == "google")
+                    @if($user->provider == "azure")
                         <x-input id="avatar" name="avatar" type="file" class="w-100" disabled></x-input>
                     @else
                         <x-input id="avatar" name="avatar" type="file" class="w-100"></x-input>
@@ -64,7 +64,7 @@
 
                     <div class="flex mt-2"> 
                         <div class="flex-grow"></div>
-                        @if($user->provider == "google")
+                        @if($user->provider == "azure")
                             <x-button disabled>Upload</x-button>
                         @else
                             <x-button>Upload</x-button>
@@ -77,7 +77,7 @@
                 <form method="POST" enctype="multipart/form-data" action="{{ route('admin.users.update.details', [$user]) }}">
                     @CSRF
                     @METHOD('PATCH')
-                    @if($user->provider == "google")
+                    @if($user->provider == "azure")
                         <div class="flex flex-col w-100">
                             <x-label for="name" class="mr-2 text-left font-bold align-middle">Name:</x-label>
                             <x-input type="text" name="name" id="name" class="w-100 bg-gray-100" disabled></x-input>
@@ -109,7 +109,7 @@
 
                     <div class="flex mt-2"> 
                         <div class="flex-grow"></div>
-                        @if($user->provider == "google")
+                        @if($user->provider == "azure")
                             <x-button disabled>Submit</x-button>
                         @else
                             <x-button>Submit</x-button>
@@ -122,7 +122,7 @@
                 <form method="POST" enctype="multipart/form-data" action="{{ route('admin.users.update.password', [$user]) }}">
                     @CSRF
                     @METHOD('PATCH')
-                    @if($user->provider == "google")
+                    @if($user->provider == "azure")
                         <div class="flex flex-col w-100">
                             <x-label for="newpassword" class="mr-2 text-left font-bold align-middle">New Password:</x-label>
                             <x-input type="password" name="newpassword" id="newpassword" class="w-100 bg-gray-100" disabled/>
@@ -148,7 +148,7 @@
 
                     <div class="flex mt-2"> 
                         <div class="flex-grow"></div>
-                        @if($user->provider == "google")
+                        @if($user->provider == "azure")
                             <x-button disabled>Submit</x-button>
                         @else
                             <x-button>Submit</x-button>
