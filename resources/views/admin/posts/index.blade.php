@@ -32,7 +32,6 @@
         </div>
         <x-card class="max-w-6xl">
             @component('components.posts.post-grid', ['posts' => $posts, 'edit' => true])
-                
             @endcomponent
         </x-card>
     </div>

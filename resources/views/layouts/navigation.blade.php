@@ -52,7 +52,7 @@
                             d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                     @else
-                    <img class="h-10 w-10 rounded-full object-cover" src="{{ auth()->user()->avatar }}" />
+                    <img class="h-10 w-10 rounded-full object-cover" src="/{{ auth()->user()->avatar }}" />
                     @endif
                 </div>
 
@@ -132,7 +132,7 @@
                         d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
                 @else
-                <img class="h-10 w-10 rounded-full object-cover border-solid border-2 border-gray-800 group-hover:border-gray-500 transition" src="{{ auth()->user()->avatar }}"></img>
+                <img class="h-10 w-10 rounded-full object-cover border-solid border-2 border-gray-800 group-hover:border-gray-500 transition" src="/{{ auth()->user()->avatar }}"></img>
                 @endif
             </div>
 
