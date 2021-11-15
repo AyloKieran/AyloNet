@@ -5,7 +5,7 @@
 
     <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 pt-8 pb-4 flex items-center">
         <div class="text-black mx-auto flex">
-            <h1 class="text-3xl font-semibold ">Uploads</h1>
+            <h1 class="text-3xl font-semibold">Uploads</h1>
         </div>
     </div>
 
