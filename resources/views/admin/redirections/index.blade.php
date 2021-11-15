@@ -5,7 +5,7 @@
 
     <div class="max-w-5xl mx-auto sm:px-6 lg:px-8 pt-8 pb-4 flex items-center">
         <div class="text-black mx-auto flex">
-            <h1 class="text-3xl font-semibold ">Redirections</h1>
+            <h1 class="text-3xl font-semibold">Redirections</h1>
         </div>
     </div>
 
@@ -58,9 +58,9 @@
                                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
                             @else
-                            <img class="h-10 w-10 rounded-full" src="{{ $redirection->creator()->avatar }}"
+                            <img class="h-10 w-10 rounded-full" src="/{{ $redirection->creator()->avatar }}"
                                 alt="{{ $redirection->creator()->name }}'s Avatar"
-                                title="{{ $redirection->creator()->name }}"></img>
+                                title="{{ $redirection->creator()->name }}">
                             @endif
                             <div class="flex-grow lg:flex-grow-0"></div>
                         </div>

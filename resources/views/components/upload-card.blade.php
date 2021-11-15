@@ -8,7 +8,7 @@
         <h3 class="text-center font-semibold m-2">{{ $upload->name }}</h3>
         <div class="flex">
             <div>
-                <img src="{{ $upload->creator()->avatar }}"
+                <img src="/{{ $upload->creator()->avatar }}"
                     class="h-7 w-7 rounded-full border-solid border-2 border-gray-700"
                     title="{{ $upload->creator()->name }}" />
             </div>
