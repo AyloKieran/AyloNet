@@ -24,7 +24,7 @@
         <div class="flex-grow"></div>
         <div class="flex flex-col items-center md:mb-32">
             <section class="text-6xl lg:text-7xl pt-20 font-extrabold text-gray-900 flex flex-col">
-                <span class="wave">👋</span>
+                <span class="font-normal wave">👋</span>
             </section>
             <span class="text-4xl lg:text-5xl mx-auto mt-5 mb-2 font-bold">Howdy, I'm <span class="underline bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-red-500">Kieran.</span></span>
             <span class="text-xl lg:text-2xl mb-5 font-semibold text-gray-700">I make web stuff.</span>
